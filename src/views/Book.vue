@@ -2,11 +2,25 @@
     <div class="book">
         <div class="book_title">mainページ</div>
         <div class="book_contents">
-            <table v-for="item in items" v-bind:key="item">{{ item }}</table>
+            <thead>
+                <tr>
+                    <th v-for="head in heads" v-bind:key="head">{{ head }}</th>
+                </tr>
+                <!-- <tr>
+                    <th v-for="item in items" v-bind:key="item">{{ item }}</th>
+                </tr> -->
+            </thead>
+            <tbody>
+                <tr v-for="item in items" v-bind:key="item.id">
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.author }}</td>
+                    <td>{{ item.publisher }}</td>
+                </tr>
+            </tbody>
+            <!-- <table v-for="item in items" v-bind:key="item">{{ item }}</table> -->
         </div>
-        <v-client-table :columns="columns" :data="data" :options="options" v-model="new_create"></v-client-table>
-        <div>
-            <router-link to="/Add" class="add_page_transition" v-on:click="addText">追加</router-link>
+        <div class="add_page_btn">
+            <router-link to="/Add" class="add_page_transition">追加</router-link>
         </div>
     </div>
 </template>
@@ -19,22 +33,31 @@ export default {
         return {
             new_create: '',
             items: [],
+            heads: [
+                'タイトル',
+                '著者名',
+                '出版社',
+            ],
         }
     },
     methods: {
         fetchTexts: function() {
-            axios.get('/api/books').then((res)=>{
+            axios.get('http://127.0.0.1:8000/api/books').then((res)=>{
                 this.items = res.data
+                console.log(res)
             })
         },
         addText: function() {
-            axios.post('/api/create', {
+            axios.post('http://127.0.0.1:8000/api/books', {
                 title: this.new_create
             }).then((res) => {
                 this.items = res.data
                 this.new_create = ''
             })
         },
+        deleteText: function(task_id) {
+            axios.post()
+        }
     },
     created() {
         this.fetchTexts()
@@ -45,7 +68,7 @@ export default {
 <style>
 .book {
     margin: 0 auto;
-    /* width: 1000px; */
+    width: 1000px;
     text-align: center;
 }
 
@@ -53,17 +76,32 @@ export default {
     padding-bottom: 30px;
 }
 
-.add_page_transition {
+th {
     border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+}
+
+.add_page_btn {
+    margin-top: 30px;
+}
+
+.add_page_transition {
+    border: 1px solid gray;
     padding: 5px 15px;
     color: black;
     text-decoration: none;
-    /* width: 300px;
-    height: 50px; */
+}
+
+.add_page_transition:hover {
+    background: yellow;
 }
 
 .book_contents {
     text-align: center;
+    width: 100%;
 }
 
 </style>

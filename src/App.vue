@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/book">メインページ</router-link> |
-      <router-link to="/Add">追加する</router-link>
+      <!-- <router-link to="/">Home</router-link> | -->
+      <router-link to="/">メインページ</router-link> |
+      <router-link to="/add">追加する</router-link> |
+      <router-link to="/show">詳細画面</router-link>
     </div>
     <router-view/>
   </div>
