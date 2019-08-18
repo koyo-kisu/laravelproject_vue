@@ -51,7 +51,7 @@ export default {
     },
     methods: {
         addText: function() {
-            axios.post('http://127.0.0.1:8000/api/create', {
+            axios.post('/api/create', {
                 title: this.typedTitle
             }).then((res) => {
                 this.typedTitle = ''

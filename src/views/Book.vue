@@ -48,7 +48,7 @@ export default {
             })
         },
         addText: function() {
-            axios.post('http://127.0.0.1:8000/api/books', {
+            axios.post('/api/books', {
                 title: this.new_create
             }).then((res) => {
                 this.items = res.data
