@@ -6,9 +6,6 @@
                 <tr>
                     <th v-for="head in heads" v-bind:key="head">{{ head }}</th>
                 </tr>
-                <!-- <tr>
-                    <th v-for="item in items" v-bind:key="item">{{ item }}</th>
-                </tr> -->
             </thead>
             <tbody>
                 <tr v-for="item in items" v-bind:key="item.id">
@@ -17,7 +14,6 @@
                     <td>{{ item.publisher }}</td>
                 </tr>
             </tbody>
-            <!-- <table v-for="item in items" v-bind:key="item">{{ item }}</table> -->
         </div>
         <div class="add_page_btn">
             <router-link to="/Add" class="add_page_transition">追加</router-link>
@@ -49,14 +45,20 @@ export default {
         },
         addText: function() {
             axios.post('/api/books', {
-                title: this.new_create
+                title: this.new_create,
+                author: this.new_create,
+                publisher: this.new_create
             }).then((res) => {
                 this.items = res.data
                 this.new_create = ''
             })
         },
         deleteText: function(task_id) {
-            axios.post()
+            axios.post('/api/del', {
+                id: task_id
+            }).then((res) => {
+                this.items = res.data
+            })
         }
     },
     created() {
@@ -78,10 +80,14 @@ export default {
 
 th {
     border: 1px solid black;
+    width: 400px;
+    background: gray;
+    font-size: bold;
 }
 
 td {
     border: 1px solid black;
+    width: 400px;
 }
 
 .add_page_btn {

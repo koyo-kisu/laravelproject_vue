@@ -52,9 +52,14 @@ export default {
     methods: {
         addText: function() {
             axios.post('/api/create', {
-                title: this.typedTitle
+                title: this.typedTitle,
+                author: this.typedAuthor,
+                publisher: this.typedPublisher,
+
             }).then((res) => {
-                this.typedTitle = ''
+                this.typedTitle = '',
+                this.typedAuthor = '',
+                this.typedPublisher = ''
             })
         },
     // watch: {
