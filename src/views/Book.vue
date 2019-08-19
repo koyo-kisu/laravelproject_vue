@@ -81,13 +81,15 @@ export default {
 th {
     border: 1px solid black;
     width: 400px;
-    background: gray;
+    background: #f3f6fc;
     font-size: bold;
 }
 
 td {
     border: 1px solid black;
     width: 400px;
+    text-align: left;
+    padding: 5px 0 5px 10px;
 }
 
 .add_page_btn {
