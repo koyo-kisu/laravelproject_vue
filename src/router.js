@@ -22,6 +22,11 @@ export default new Router({
       path: '/show',
       name: 'show',
       component: Show
-    }
+    },
+    // {
+    //   path: '/delete',
+    //   name: 'delete',
+    //   component: Delete
+    // },
   ]
 })

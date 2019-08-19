@@ -12,6 +12,7 @@
                     <td>{{ item.title }}</td>
                     <td>{{ item.author }}</td>
                     <td>{{ item.publisher }}</td>
+                    <!-- <td>削除</td> -->
                 </tr>
             </tbody>
         </div>
@@ -33,6 +34,7 @@ export default {
                 'タイトル',
                 '著者名',
                 '出版社',
+                // '編集',
             ],
         }
     },
@@ -43,23 +45,17 @@ export default {
                 console.log(res)
             })
         },
-        addText: function() {
-            axios.post('/api/books', {
-                title: this.new_create,
-                author: this.new_create,
-                publisher: this.new_create
-            }).then((res) => {
-                this.items = res.data
-                this.new_create = ''
-            })
-        },
-        deleteText: function(task_id) {
-            axios.post('/api/del', {
-                id: task_id
-            }).then((res) => {
-                this.items = res.data
-            })
-        }
+        // addText: function() {
+        //     axios.post('/api/books', {
+        //         title: this.new_create,
+        //         author: this.new_create,
+        //         publisher: this.new_create
+        //     }).then((res) => {
+        //         this.items = res.data
+        //         this.new_create = ''
+        //     })
+        // },
+        
     },
     created() {
         this.fetchTexts()

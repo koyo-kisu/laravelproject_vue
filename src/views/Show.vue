@@ -3,11 +3,12 @@
         <div class="detail_title">詳細画面</div>
         <div class="detail_date">読了日：{{}}</div>
         <div>
-            <div class="detail_comment" v-for="item in items" v-bind:key="item">
+            <div class="detail_comment" v-for="item in items" v-bind:key="item.id">
                 <div class="detail_comment_text">{{ item.description}}</div>
                 <div class="detail_items">タイトル：{{ item.title }}</div>
                 <div class="detail_items">著者名：{{ item.author }}</div>
-                <div class="detail_items">出版社名：{{ item.publisher }}</div>            
+                <div class="detail_items">出版社名：{{ item.publisher }}</div>
+                <div class="detail_items del_btn" v-on:click="delText" v-bind:key="item.id">削除</div>        
             </div>
         </div>
         <router-link to="/" class="return_home_btn">ホームに戻る</router-link>
@@ -32,6 +33,13 @@ export default {
                 // console.log(res)
             })
         },
+        delText: function(task_id) {
+            axios.post('/api/del', {
+                id: task_id
+            }).then((res) => {
+                this.items = res.data
+            })
+        }
         // addText: function() {
         //     axios.post('/api/create', {
         //         title: this.new_create,
@@ -83,6 +91,16 @@ export default {
 
 .detail_items {
     padding: 5px 10px;
+}
+
+.del_btn {
+    background:#F5F6F2;
+    width: 35px;
+    border-radius: 10%;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-bottom: 5px;
 }
 
 .return_home_btn, .return_add_btn {
