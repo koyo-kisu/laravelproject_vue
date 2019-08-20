@@ -1,6 +1,10 @@
 <template>
     <div class="book">
         <div class="book_title">mainページ</div>
+        <div>
+            <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
+            <button v-on:click="filteredItems">検索</button>
+        </div>
         <div class="book_contents">
             <thead>
                 <tr>
@@ -16,6 +20,12 @@
                 </tr>
             </tbody>
         </div>
+        <!-- <div class="overflow-auto">
+            <div class="mt-3">
+                <h6 class="text-center">ページ移動ボタン</h6>
+                <b-pagination v-model="currentPage" :total-rows="rows" align="center" name="pagination" :per-page="perPage"></b-pagination>
+            </div>
+        </div> -->
         <div class="add_page_btn">
             <router-link to="/Add" class="add_page_transition">追加</router-link>
         </div>
@@ -28,14 +38,17 @@ import axios from 'axios'
 export default {
     data: function() {
         return {
+            keyword: '',
             new_create: '',
             items: [],
             heads: [
                 'タイトル',
                 '著者名',
                 '出版社',
-                // '編集',
             ],
+            rows: 100,
+            currentPage: 1,
+            perPage: 5
         }
     },
     methods: {
@@ -45,21 +58,46 @@ export default {
                 console.log(res)
             })
         },
-        // addText: function() {
-        //     axios.post('/api/books', {
-        //         title: this.new_create,
-        //         author: this.new_create,
-        //         publisher: this.new_create
-        //     }).then((res) => {
-        //         this.items = res.data
-        //         this.new_create = ''
-        //     })
-        // },
+        filteredItems: function() {
+            axios.get('http://127.0.0.1:8000/api/books').then((res) => {
+                this.items = res.data
+                var items = [];
+
+                for(var i in this.items) {
+                    var item = this.items[i];
+                    if(item.title.indexOf(this.keyword) !== -1) {
+                        items.push(item);
+                    }
+                }
+                return items;
+            })
+        },
         
+    },
+    computed: {
+        // filteredItems: function() {
+        //     var items = [];
+
+        //     for(var i in this.items) {
+        //         var item = this.items[i];
+        //         if(item.title.indexOf(this.keyword) !== -1 ||
+        //             item.author.indexOf(this.keyword) !== -1 ||
+        //             item.publisher.indexOf(this.keyword) !== -1) {
+        //                 items.push(item);
+        //             }
+        //     }
+        // }
     },
     created() {
         this.fetchTexts()
     },
+    mounted() {
+        var url = '/ajax/';
+        axios.get(url).then(function(response){
+            var comedians = response.data;
+            console.log(comedians);
+        });
+    }
 }
 </script>
 
@@ -72,6 +110,10 @@ export default {
 
 .book_title {
     padding-bottom: 30px;
+}
+
+.key_search {
+    width: 250px;
 }
 
 th {
