@@ -24,7 +24,7 @@
         </label>
         <br>
         <div class="add_btn">
-            <button type="submit" class="add_btn_txt" v-on:click="addText">登録</button>
+            <button type="submit" class="add_btn_txt" v-on:click="addText">登録画面へ</button>
         </div>
     </div>
 </template>
