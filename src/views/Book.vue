@@ -3,7 +3,7 @@
         <div class="book_title">mainページ</div>
         <div>
             <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
-            <button v-on:click="filteredItems(item.title)">検索</button>
+            <button v-on:click="filteredItems()" class="key_search_btn">検索</button>
         </div>
         <div class="book_contents">
             <thead>
@@ -57,7 +57,7 @@ export default {
             })
         },
         filteredItems: function() {
-            axios.get('/api/books').then((res) => {
+            axios.get('/api/search').then((res) => {
                 this.items = res.data
                 var items = [];
 
@@ -112,6 +112,11 @@ export default {
 
 .key_search {
     width: 250px;
+    height: 25px;
+}
+
+.key_search_btn {
+    height: 25px;
 }
 
 th {
