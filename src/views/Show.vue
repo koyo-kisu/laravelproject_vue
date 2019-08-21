@@ -5,7 +5,7 @@
         <div>
             <div class="detail_comment" v-for="item in items" v-bind:key="item.id">
                 <div class="detail_comment_text">{{ item.description}}</div>
-                <div>{{ charaCount }}文字</div>
+                <!-- <div>{{ charaCount }}文字</div> -->
                 <div class="detail_items">タイトル：{{ item.title }}</div>
                 <div class="detail_items">著者名：{{ item.author }}</div>
                 <div class="detail_items">出版社名：{{ item.publisher }}</div>
@@ -27,11 +27,11 @@ export default {
             items: [],
         }
     },
-    computed: {
-        charaCount: function() {
-            return this.typedText.length;
-        }
-    },
+    // computed: {
+    //     charaCount: function() {
+    //         return this.typedText.length;
+    //     }
+    // },
     methods: {
         fetchTexts: function() {
             axios.get('/api/books').then((res)=>{
