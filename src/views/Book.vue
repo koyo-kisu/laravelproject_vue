@@ -16,16 +16,15 @@
                     <td>{{ item.title }}</td>
                     <td>{{ item.author }}</td>
                     <td>{{ item.publisher }}</td>
-                    <!-- <td>削除</td> -->
                 </tr>
             </tbody>
         </div>
-        <!-- <div class="overflow-auto">
+        <div class="overflow-auto">
             <div class="mt-3">
                 <h6 class="text-center">ページ移動ボタン</h6>
                 <b-pagination v-model="currentPage" :total-rows="rows" align="center" name="pagination" :per-page="perPage"></b-pagination>
             </div>
-        </div> -->
+        </div>
         <div class="add_page_btn">
             <router-link to="/Add" class="add_page_transition">追加</router-link>
         </div>
@@ -74,30 +73,30 @@ export default {
         },
         
     },
-    computed: {
-        // filteredItems: function() {
-        //     var items = [];
+    // computed: {
+    //     filteredItems: function() {
+    //         var items = [];
 
-        //     for(var i in this.items) {
-        //         var item = this.items[i];
-        //         if(item.title.indexOf(this.keyword) !== -1 ||
-        //             item.author.indexOf(this.keyword) !== -1 ||
-        //             item.publisher.indexOf(this.keyword) !== -1) {
-        //                 items.push(item);
-        //             }
-        //     }
-        // }
-    },
+    //         for(var i in this.items) {
+    //             var item = this.items[i];
+    //             if(item.title.indexOf(this.keyword) !== -1 ||
+    //                 item.author.indexOf(this.keyword) !== -1 ||
+    //                 item.publisher.indexOf(this.keyword) !== -1) {
+    //                     items.push(item);
+    //                 }
+    //         }
+    //     }
+    // },
     created() {
         this.fetchTexts()
     },
-    mounted() {
-        var url = '/ajax/';
-        axios.get(url).then(function(response){
-            var comedians = response.data;
-            console.log(comedians);
-        });
-    }
+    // mounted() {
+    //     var url = '/api/books';
+    //     axios.get(url).then(function(response){
+    //         var = response.data;
+    //         console.log();
+    //     });
+    // }
 }
 </script>
 

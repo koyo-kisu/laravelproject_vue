@@ -46,17 +46,6 @@ export default {
                 this.items = res.data
             })
         }
-        // addText: function() {
-        //     axios.post('/api/create', {
-        //         title: this.new_create,
-        //         author: this.new_create,
-        //         publisher: this.new_create
-
-        //     }).then((res) => {
-        //         this.items = res.data
-        //         this.new_create = ''
-        //     })
-        // },
     },
     created() {
         this.fetchTexts()

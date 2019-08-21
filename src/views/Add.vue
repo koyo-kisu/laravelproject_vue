@@ -26,9 +26,6 @@
         <div class="add_btn">
             <button type="submit" class="add_btn_txt" v-on:click="addText">登録</button>
         </div>
-        <!-- <div class="del_btn">
-            <button type="submit" class="del_btn_txt">削除</button>
-        </div> -->
     </div>
 </template>
 
