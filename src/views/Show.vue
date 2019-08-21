@@ -10,7 +10,7 @@
                 <div class="detail_items">タイトル：{{ item.title }}</div>
                 <div class="detail_items">著者名：{{ item.author }}</div>
                 <div class="detail_items">出版社名：{{ item.publisher }}</div>
-                <div class="detail_items del_btn" v-on:click="delText" v-bind:key="item.id">削除</div>        
+                <div class="detail_items del_btn" v-on:click="delText(task_id)" v-bind:key="item.id">削除</div>        
             </div>
         </div>
         <router-link to="/" class="return_home_btn">ホームに戻る</router-link>
@@ -52,12 +52,6 @@ export default {
         this.fetchTexts()
     },
 }
-    // data: function() {
-    //     return 
-    // },
-    // editText:function() {
-        
-    // }
 </script>
 
 <style>
