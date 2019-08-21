@@ -4,6 +4,7 @@
         <div class="detail_date">読了日：{{}}</div>
         <div>
             <div class="detail_comment" v-for="item in items" v-bind:key="item.id">
+                <div>{{ item.id }}</div>
                 <div class="detail_comment_text">{{ item.description}}</div>
                 <!-- <div>{{ charaCount }}文字</div> -->
                 <div class="detail_items">タイトル：{{ item.title }}</div>
