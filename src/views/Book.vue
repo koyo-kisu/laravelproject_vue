@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="add_page_btn">
-            <router-link to="/Add" class="add_page_transition">追加</router-link>
+            <router-link to="/Add" class="add_page_transition">追加フォームへ</router-link>
         </div>
     </div>
 </template>

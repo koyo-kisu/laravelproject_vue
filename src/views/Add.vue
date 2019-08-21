@@ -24,7 +24,7 @@
         </label>
         <br>
         <div class="add_btn">
-            <button type="submit" class="add_btn_txt" v-on:click="addText">登録画面へ</button>
+            <button type="submit" class="add_btn_txt" v-on:click="addText">登録する</button>
         </div>
     </div>
 </template>
@@ -55,6 +55,7 @@ export default {
                 description: this.typedText,
 
             }).then((res) => {
+                this.items = res.data,
                 this.typedTitle = '',
                 this.typedAuthor = '',
                 this.typedPublisher = '',
