@@ -53,13 +53,13 @@ export default {
     },
     methods: {
         fetchTexts: function() {
-            axios.get('http://127.0.0.1:8000/api/books').then((res)=>{
+            axios.get('/api/books').then((res)=>{
                 this.items = res.data
                 console.log(res)
             })
         },
         filteredItems: function() {
-            axios.get('http://127.0.0.1:8000/api/books').then((res) => {
+            axios.get('/api/books').then((res) => {
                 this.items = res.data
                 var items = [];
 
