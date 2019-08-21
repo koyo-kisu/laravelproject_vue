@@ -38,7 +38,6 @@ export default {
     data: function() {
         return {
             keyword: '',
-            new_create: '',
             items: [],
             heads: [
                 'タイトル',

@@ -3,10 +3,12 @@
         <div class="add_title">レビュー追加画面</div>
         <label class="add_item">
             <div>タイトル</div>
+            <div v-if="error" class="error">{{ error }}</div>
             <div><input type="text" class="txt" v-model="typedTitle"></div>
         </label>
          <label class="add_item">
              <div>著者名</div>
+             <div v-if="error" class="error">{{ error }}</div>
             <div><input type="text" class="txt" v-model="typedAuthor"></div>
         </label>
          <label class="add_item">
@@ -19,6 +21,7 @@
         </label>
         <label>
             <div>感想</div>
+             <div v-if="error" class="error">{{ error }}</div>
             <textarea v-model="typedText" name="" class="txa" cols="20" rows="10"></textarea>
             <p>{{ charaCount }} 文字</p>
         </label>
@@ -61,6 +64,18 @@ export default {
                 this.typedPublisher = '',
                 this.typedText = ''
             })
+            if(this.item.title.trim() === '') {
+                this.error = 'タイトルは必須です'
+                return
+            }
+            if (this.item.author.trim() === '') {
+                this.error = '著者名は必須です'
+                return
+            }
+            if (this.item.description.trim() === '') {
+                this.error = '感想は必須です'
+                return
+            }
         },
     // watch: {
     //     charaCount: function() {
@@ -94,6 +109,10 @@ export default {
 .add_title {
     text-align: center;
     padding-bottom: 30px;
+}
+
+.error {
+    color: red;
 }
 
 .txt, .txa {
