@@ -60,7 +60,8 @@ export default {
             }).then((res) => {
                 this.typedTitle = '',
                 this.typedAuthor = '',
-                this.typedPublisher = ''
+                this.typedPublisher = '',
+                this.typedText = ''
             })
         },
     // watch: {
