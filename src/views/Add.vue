@@ -55,6 +55,7 @@ export default {
                 title: this.typedTitle,
                 author: this.typedAuthor,
                 publisher: this.typedPublisher,
+                description: this.typedText,
 
             }).then((res) => {
                 this.typedTitle = '',
