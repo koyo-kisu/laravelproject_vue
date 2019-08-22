@@ -28,6 +28,8 @@
         <br>
         <div class="add_btn">
             <button type="submit" class="add_btn_txt" v-on:click="addText">登録する</button>
+        </div>
+        <div class="add_home_btn">
             <router-link to="/" class="add_btn_txt">ホームに戻る</router-link>
         </div>
     </div>
@@ -120,7 +122,7 @@ export default {
     width: 600px;
 }
 
-.add_btn, .del_btn {
+.add_btn {
     padding-top: 20px;
 }
 
@@ -131,6 +133,16 @@ export default {
     cursor: pointer;
     text-align: center;
     margin-bottom: 10px;
+}
+
+.add_home_btn {
+    border: 1px solid gray;
+    padding: 10px;
+    width: 600px;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    text-align: center;
 }
 
 </style>
