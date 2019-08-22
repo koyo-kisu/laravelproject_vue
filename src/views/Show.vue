@@ -52,7 +52,7 @@ export default {
             }).then((res) => {
                 this.items = res.data
             })
-            return redirect('/');
+            // return redirect('/');
         },
         filteredItems: function() {
             axios.post('/api/search', {
@@ -99,7 +99,7 @@ export default {
 }
 
 .key_search {
-    width: 565px;
+    width: 550px;
     height: 20px;
 }
 
