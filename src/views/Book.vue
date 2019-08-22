@@ -49,7 +49,8 @@ export default {
             ],
             rows: 100,
             currentPage: 1,
-            perPage: 5
+            perPage: 5,
+            filterItem : this.title
         }
     },
     methods: {
@@ -61,7 +62,7 @@ export default {
         },
         filteredItems: function() {
             axios.post('/api/search', {
-                title: "aaaa"
+                title: filterItem
             }).then((res) => {
                 this.items = res.data
                 var texts = [];

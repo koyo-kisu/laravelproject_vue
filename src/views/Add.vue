@@ -27,10 +27,10 @@
         </label>
         <br>
         <div class="add_btn">
-            <button type="submit" class="add_btn_txt txt" v-on:click="addText">登録する</button>
+            <button type="submit" class="add_btn_txt" v-on:click="addText">登録する</button>
         </div>
         <div class="add_home_btn">
-            <router-link to="/" class="add_return_btn txt">ホームに戻る</router-link>
+            <router-link to="/" class="add_return_btn">ホームに戻る</router-link>
         </div>
     </div>
 </template>
@@ -122,6 +122,7 @@ export default {
 }
 
 .txt, .txa {
+    width: 600px;
     color: black;
     text-decoration: none;
 }
