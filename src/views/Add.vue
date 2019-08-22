@@ -140,7 +140,9 @@ export default {
 }
 
 .add_home_btn {
+    display: inline-block;
     border: 1px solid gray;
+    padding: 10px ;
     cursor: pointer;
     color: black;
     text-decoration: none;

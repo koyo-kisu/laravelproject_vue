@@ -127,6 +127,7 @@ export default {
 .key_search_btn {
     display: inline-block;
     height: 25px;
+    margin-left: 5px;
 }
 
 th {
@@ -150,6 +151,7 @@ td {
 }
 
 .add_page_transition {
+    display: inline-block;
     border: 1px solid gray;
     padding: 5px 15px;
     color: black;
@@ -160,6 +162,7 @@ td {
 }
 
 .show_page_transition {
+    display: inline-block;
     border: 1px solid gray;
     padding: 5px 15px;
     color: black;
