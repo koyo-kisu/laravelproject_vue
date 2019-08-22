@@ -131,7 +131,7 @@ export default {
     padding-top: 20px;
 }
 
-.add_btn_txt {
+.add_btn_txt, .add_return_btn  {
     border: 1px solid gray;
     padding: 10px ;
     cursor: pointer;
@@ -140,7 +140,7 @@ export default {
     width: 600px;
 }
 
-.add_return_btn {
+/* .add_return_btn {
     display: inline-block;
     border: 1px solid gray;
     width: 600px;
@@ -149,7 +149,7 @@ export default {
     color: black;
     text-decoration: none;
     text-align: center;
-}
+} */
 
 </style>
 

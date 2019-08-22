@@ -50,7 +50,6 @@ export default {
             rows: 100,
             currentPage: 1,
             perPage: 5,
-            filterItem : this.title
         }
     },
     methods: {
@@ -78,20 +77,6 @@ export default {
         },
         
     },
-    // computed: {
-    //     filteredItems: function() {
-    //         var items = [];
-
-    //         for(var i in this.items) {
-    //             var item = this.items[i];
-    //             if(item.title.indexOf(this.keyword) !== -1 ||
-    //                 item.author.indexOf(this.keyword) !== -1 ||
-    //                 item.publisher.indexOf(this.keyword) !== -1) {
-    //                     items.push(item);
-    //                 }
-    //         }
-    //     }
-    // },
     created() {
         this.fetchTexts()
     },

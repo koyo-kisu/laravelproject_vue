@@ -1,6 +1,10 @@
 <template>
     <div class="detail_contents">
         <div class="detail_title">詳細画面</div>
+        <div class="search_item">
+            <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
+            <button v-on:click="filteredItems" class="key_search_btn">検索</button>
+        </div>
         <div>
             <div class="detail_comment" v-for="item in items" v-bind:key="item.id">
                 <div class="detail_date">読み終えた日：{{ item.finish_date }}</div>
@@ -26,6 +30,7 @@ export default {
         return {
             new_create: '',
             items: [],
+            keyword: this.title,
         }
     },
     // computed: {
@@ -47,6 +52,22 @@ export default {
                 this.items = res.data
             })
             return redirect('/');
+        },
+        filteredItems: function() {
+            axios.post('/api/search', {
+                title: this.keyword
+            }).then((res) => {
+                this.items = res.data
+                var texts = [];
+
+                for(var i in this.items) {
+                    var item = this.items[i];
+                    if(item.title.indexOf(this.keyword) !== -1) {
+                        texts.push(item);
+                    }
+                }
+                return texts;
+            })
         },
         onUpdate: function(task_id) {
             axios.post('/api/update', {
