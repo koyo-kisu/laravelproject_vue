@@ -59,15 +59,15 @@ export default {
         filteredItems: function() {
             axios.post('/api/search').then((res) => {
                 this.items = res.data
-                var items = [];
+                var texts = [];
 
                 for(var i in this.items) {
                     var item = this.items[i];
                     if(item.title.indexOf(this.keyword) !== -1) {
-                        items.push(item);
+                        texts.push(item);
                     }
                 }
-                return items;
+                return texts;
             })
         },
         
