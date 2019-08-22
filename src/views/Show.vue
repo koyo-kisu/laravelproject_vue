@@ -1,9 +1,9 @@
 <template>
     <div class="detail_contents">
         <div class="detail_title">詳細画面</div>
-        <div class="detail_date">読了日：{{}}</div>
         <div>
             <div class="detail_comment" v-for="item in items" v-bind:key="item.id">
+                <div class="detail_date">読了日：{{ item.created_at }}</div>
                 <div>{{ item.id }}</div>
                 <div class="detail_comment_text">{{ item.description}}</div>
                 <!-- <div>{{ charaCount }}文字</div> -->
