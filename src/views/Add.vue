@@ -17,7 +17,7 @@
         </label>
         <label class="add_item">
             <div>読了日</div>
-            <div><input type="month" value="2019-01-01" v-model="typedDate"></div>
+            <div><input type="date" value="2019-01-01" v-model="typedDate"></div>
         </label>
         <label>
             <div>感想</div>
@@ -122,7 +122,6 @@ export default {
 }
 
 .txt, .txa {
-    width: 600px;
     color: black;
     text-decoration: none;
 }
@@ -143,6 +142,7 @@ export default {
     display: inline-block;
     border: 1px solid gray;
     padding: 10px ;
+    width: 600px;
     cursor: pointer;
     color: black;
     text-decoration: none;
