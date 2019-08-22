@@ -65,7 +65,10 @@ export default {
 
 .return_home_btn_top {
     color: black;
-    float: right
+    float: right;
+    margin-bottom: 20px;
+    text-decoration: none;
+    border: 1px solid gray;
 }
 
 .detail_title {

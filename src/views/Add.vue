@@ -17,7 +17,7 @@
         </label>
         <label class="add_item">
             <div>読了日</div>
-            <div><input type="date" value="2019-01-01"></div>
+            <div><input type="date" value="2019-01-01" v-model="typedDate"></div>
         </label>
         <label>
             <div>感想</div>
@@ -45,6 +45,7 @@ export default {
         typedTitle: '',
         typedAuthor: '',
         typedPublisher: '',
+        typedDate: '',
       }
     },
     computed: {
@@ -59,13 +60,15 @@ export default {
                 author: this.typedAuthor,
                 publisher: this.typedPublisher,
                 description: this.typedText,
+                created_at: this.typedDate
 
             }).then((res) => {
                 this.items = res.data,
                 this.typedTitle = '',
                 this.typedAuthor = '',
                 this.typedPublisher = '',
-                this.typedText = ''
+                this.typedText = '',
+                this.typedDate = ''
             })
             if(this.item.title.trim() === '') {
                 this.error = 'タイトルは必須です'

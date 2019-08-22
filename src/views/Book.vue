@@ -121,6 +121,7 @@ export default {
 
 .key_search {
     width: 500px;
+    height: 20px;
 }
 
 .key_search_btn {
@@ -147,7 +148,7 @@ td {
     width: 600px;
 }
 
-.add_page_transition {
+/* .add_page_transition {
     border: 1px solid gray;
     padding: 5px 15px;
     color: black;
@@ -162,7 +163,7 @@ td {
     color: black;
     text-decoration: none;
     width: 600px;
-}
+} */
 
 .book_contents {
     text-align: center;
