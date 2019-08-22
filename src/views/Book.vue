@@ -146,15 +146,17 @@ td {
 .add_page_btn, .show_page_btn {
     margin-top: 30px;
     width: 600px;
+    text-align: center;
 }
 
-/* .add_page_transition {
+.add_page_transition {
     border: 1px solid gray;
     padding: 5px 15px;
     color: black;
     text-decoration: none;
     margin-bottom: 10px;
     width: 600px;
+    text-align: center;
 }
 
 .show_page_transition {
@@ -163,7 +165,8 @@ td {
     color: black;
     text-decoration: none;
     width: 600px;
-} */
+    text-align: center;
+}
 
 .book_contents {
     text-align: center;

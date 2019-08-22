@@ -1,7 +1,7 @@
 <template>
     <div class="detail_contents">
         <div class="detail_title">詳細画面</div>
-        <div>
+        <div class="show_btn_top">
             <router-link to="/" class="return_home_btn_top">ホーム</router-link>
         </div>
         <div>
@@ -63,10 +63,14 @@ export default {
     width: 600px;
 }
 
+.show_btn_top {
+    margin-top: 10px;
+}
+
 .return_home_btn_top {
     color: black;
     float: right;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
     text-decoration: none;
     border: 1px solid gray;
 }

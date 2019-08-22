@@ -124,6 +124,7 @@ export default {
 .txt, .txa {
     width: 600px;
     color: black;
+    text-decoration: none;
 }
 
 .add_btn {
@@ -140,12 +141,10 @@ export default {
 
 .add_home_btn {
     border: 1px solid gray;
-    padding: 10px;
     cursor: pointer;
     color: black;
     text-decoration: none;
     text-align: center;
-    width: 600px;
 }
 
 </style>
