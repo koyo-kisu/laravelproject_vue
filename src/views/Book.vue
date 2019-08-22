@@ -57,7 +57,7 @@ export default {
             })
         },
         filteredItems: function() {
-            axios.post('/api/search').then((res) => {
+            axios.post('/api/search', {title: " "}).then((res) => {
                 this.items = res.data
                 var texts = [];
 
@@ -116,6 +116,7 @@ export default {
 }
 
 .key_search_btn {
+    display: inline-block;
     height: 25px;
 }
 
