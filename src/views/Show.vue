@@ -73,6 +73,9 @@ export default {
     margin-bottom: 20px;
     text-decoration: none;
     border: 1px solid gray;
+    text-align: center;
+    width: 200px;
+    float: right;
 }
 
 .detail_title {

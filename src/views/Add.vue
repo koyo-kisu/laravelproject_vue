@@ -143,7 +143,6 @@ export default {
     display: inline-block;
     border: 1px solid gray;
     padding: 10px ;
-    width: 600px;
     cursor: pointer;
     color: black;
     text-decoration: none;

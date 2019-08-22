@@ -1,6 +1,6 @@
 <template>
     <div class="book">
-        <div class="book_title">読書管理表</div>
+        <div class="book_title">読書管理アプリ</div>
         <div class="search_item">
             <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
             <button v-on:click="filteredItems" class="key_search_btn">検索</button>
