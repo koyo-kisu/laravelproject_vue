@@ -131,7 +131,7 @@ export default {
     padding-top: 20px;
 }
 
-.add_btn_txt, .add_return_btn  {
+.add_btn_txt  {
     border: 1px solid gray;
     padding: 10px ;
     cursor: pointer;

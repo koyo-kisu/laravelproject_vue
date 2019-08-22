@@ -96,7 +96,7 @@ export default {
 }
 
 .key_search {
-    width: 580px;
+    width: 570px;
     height: 20px;
 }
 
@@ -136,7 +136,6 @@ export default {
 .del_btn {
     background:#F5F6F2;
     width: 35px;
-    border-radius: 10%;
     text-align: center;
     cursor: pointer;
     margin-left: 10px;
@@ -149,6 +148,8 @@ export default {
     text-align: center;
     cursor: pointer;
     margin-bottom: 5px;
+    float: right;
+    /* margin-left: 10px; */
 }
 
 .return_home_btn, .return_add_btn {
