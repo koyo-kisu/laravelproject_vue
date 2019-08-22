@@ -1,9 +1,6 @@
 <template>
     <div class="detail_contents">
         <div class="detail_title">詳細画面</div>
-        <div class="show_btn_top">
-            <router-link to="/" class="return_home_btn_top">ホーム</router-link>
-        </div>
         <div>
             <div class="detail_comment" v-for="item in items" v-bind:key="item.id">
                 <div class="detail_date">読了日：{{ item.created_at }}</div>
@@ -61,21 +58,6 @@ export default {
 .detail_contents {
     margin: 0 auto;
     width: 600px;
-}
-
-.show_btn_top {
-    margin-top: 10px;
-}
-
-.return_home_btn_top {
-    display: block;
-    color: black;
-    margin-bottom: 20px;
-    text-decoration: none;
-    border: 1px solid gray;
-    text-align: center;
-    width: 200px;
-    float: right;
 }
 
 .detail_title {

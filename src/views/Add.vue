@@ -17,7 +17,7 @@
         </label>
         <label class="add_item">
             <div>読了日</div>
-            <div><input type="date" value="2019-01-01" v-model="typedDate"></div>
+            <div><input type="month" value="2019-01-01" v-model="typedDate"></div>
         </label>
         <label>
             <div>感想</div>
@@ -30,7 +30,7 @@
             <button type="submit" class="add_btn_txt txt" v-on:click="addText">登録する</button>
         </div>
         <div class="add_home_btn">
-            <router-link to="/" class="txt">ホームに戻る</router-link>
+            <router-link to="/" class="add_return_btn txt">ホームに戻る</router-link>
         </div>
     </div>
 </template>
@@ -139,7 +139,7 @@ export default {
     margin-bottom: 10px;
 }
 
-.add_home_btn {
+.add_return_btn {
     display: inline-block;
     border: 1px solid gray;
     padding: 10px ;
