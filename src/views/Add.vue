@@ -30,7 +30,7 @@
             <button type="submit" class="add_btn_txt txt" v-on:click="addText">登録する</button>
         </div>
         <div class="add_home_btn">
-            <router-link to="/" class="add_btn_txt txt">ホームに戻る</router-link>
+            <router-link to="/" class="txt">ホームに戻る</router-link>
         </div>
     </div>
 </template>

@@ -28,8 +28,8 @@
         <div class="add_page_btn">
             <router-link to="/Add" class="add_page_transition">追加フォームへ</router-link>
         </div>
-        <div>
-            <router-link to="/" class="book_return_home">ホームに戻る</router-link>
+        <div class="show_page_btn">
+            <router-link to="/show" class="show_page_transition">レビューを詳しく見る</router-link>
         </div>
     </div>
 </template>
@@ -143,8 +143,9 @@ td {
     padding: 5px 0 5px 10px;
 }
 
-.add_page_btn {
+.add_page_btn, .show_page_btn {
     margin-top: 30px;
+    width: 600px;
 }
 
 .add_page_transition {
@@ -153,15 +154,13 @@ td {
     color: black;
     text-decoration: none;
     margin-bottom: 10px;
-    width: 600px;
 }
 
-.book_return_home {
+.show_page_transition {
     border: 1px solid gray;
     padding: 5px 15px;
     color: black;
     text-decoration: none;
-    width: 600px;
 }
 
 .book_contents {
