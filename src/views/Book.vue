@@ -1,9 +1,9 @@
 <template>
     <div class="book">
-        <div class="book_title">mainページ</div>
-        <div>
+        <div class="book_title">読書管理表</div>
+        <div class="search_item">
             <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
-            <button v-on:click="filteredItems" class="key_search_btn">検索</button>
+            <input v-on:click="filteredItems" class="key_search_btn" value="検索">
         </div>
         <div class="book_contents">
             <thead>
@@ -110,6 +110,10 @@ export default {
 
 .book_title {
     padding-bottom: 30px;
+}
+
+.search_item {
+    margin-bottom: 30px;
 }
 
 .key_search {

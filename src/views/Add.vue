@@ -28,6 +28,7 @@
         <br>
         <div class="add_btn">
             <button type="submit" class="add_btn_txt" v-on:click="addText">登録する</button>
+            <router-link to="/" class="add_btn_txt">ホームに戻る</router-link>
         </div>
     </div>
 </template>
@@ -123,20 +124,14 @@ export default {
     padding-top: 20px;
 }
 
-.add_btn_txt, .del_btn_txt {
+.add_btn_txt {
     border: 1px solid gray;
     padding: 10px ;
     width: 600px;
     cursor: pointer;
     text-align: center;
+    margin-bottom: 10px;
 }
 
-.add_btn_txt:hover {
-    background: yellow;
-}
-
-.del_btn_txt:hover {
-    background: red;
-}
 </style>
 
