@@ -61,7 +61,6 @@ export default {
                 this.items = res.data
                 console.log('update');
             })
-            return redirect('/');
         }
     },
     created() {
