@@ -148,6 +148,7 @@ td {
     margin-top: 30px;
     width: 600px;
     text-align: center;
+    margin: 0 auto;
 }
 
 .add_page_transition {
