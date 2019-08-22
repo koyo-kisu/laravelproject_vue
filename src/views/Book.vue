@@ -1,10 +1,6 @@
 <template>
     <div class="book">
         <div class="book_title">読書管理アプリ</div>
-        <div class="search_item">
-            <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
-            <button v-on:click="filteredItems" class="key_search_btn">検索</button>
-        </div>
         <div class="book_contents">
             <thead>
                 <tr>
@@ -40,7 +36,6 @@ import axios from 'axios'
 export default {
     data: function() {
         return {
-            keyword: this.title,
             items: [],
             heads: [
                 'タイトル',
@@ -57,22 +52,6 @@ export default {
             axios.get('/api/books').then((res)=>{
                 this.items = res.data
                 console.log(res)
-            })
-        },
-        filteredItems: function() {
-            axios.post('/api/search', {
-                title: this.keyword
-            }).then((res) => {
-                this.items = res.data
-                var texts = [];
-
-                for(var i in this.items) {
-                    var item = this.items[i];
-                    if(item.title.indexOf(this.keyword) !== -1) {
-                        texts.push(item);
-                    }
-                }
-                return texts;
             })
         },
         

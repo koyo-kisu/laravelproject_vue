@@ -140,16 +140,16 @@ export default {
     width: 600px;
 }
 
-/* .add_return_btn {
+.add_return_btn {
     display: inline-block;
     border: 1px solid gray;
     width: 600px;
-    padding: 5px;
+    padding: 5px 0px 5px 0px;
     cursor: pointer;
     color: black;
     text-decoration: none;
     text-align: center;
-} */
+}
 
 </style>
 

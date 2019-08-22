@@ -96,7 +96,7 @@ export default {
 }
 
 .key_search {
-    width: 500px;
+    width: 580px;
     height: 20px;
 }
 
@@ -104,6 +104,10 @@ export default {
     display: inline-block;
     height: 25px;
     margin-left: 5px;
+}
+
+.search_item {
+    width: 600px;
 }
 
 .detail_title {
@@ -136,6 +140,14 @@ export default {
     text-align: center;
     cursor: pointer;
     margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.update_btn {
+    background: skyblue;
+    width: 35px;
+    text-align: center;
+    cursor: pointer;
     margin-bottom: 5px;
 }
 
