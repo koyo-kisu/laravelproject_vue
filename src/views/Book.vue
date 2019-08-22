@@ -40,7 +40,7 @@ import axios from 'axios'
 export default {
     data: function() {
         return {
-            keyword: '',
+            keyword: this.title,
             items: [],
             heads: [
                 'タイトル',
@@ -62,7 +62,7 @@ export default {
         },
         filteredItems: function() {
             axios.post('/api/search', {
-                title: filterItem
+                title: this.keyword
             }).then((res) => {
                 this.items = res.data
                 var texts = [];
