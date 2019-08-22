@@ -137,12 +137,12 @@ export default {
     cursor: pointer;
     text-align: center;
     margin-bottom: 10px;
+    width: 600px;
 }
 
 .add_return_btn {
     display: inline-block;
     border: 1px solid gray;
-    padding: 10px ;
     width: 600px;
     cursor: pointer;
     color: black;
