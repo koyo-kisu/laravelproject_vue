@@ -58,7 +58,7 @@ export default {
         },
         filteredItems: function() {
             axios.post('/api/search', {
-                title: keyword
+                title: title
             }).then((res) => {
                 this.items = res.data
                 var texts = [];
