@@ -68,6 +68,7 @@ export default {
 }
 
 .return_home_btn_top {
+    display: block;
     color: black;
     float: right;
     margin-bottom: 80px;
