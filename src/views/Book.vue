@@ -3,7 +3,7 @@
         <div class="book_title">mainページ</div>
         <div>
             <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
-            <button v-on:click="filteredItems()" class="key_search_btn">検索</button>
+            <button v-on:click="filteredItems" class="key_search_btn">検索</button>
         </div>
         <div class="book_contents">
             <thead>
