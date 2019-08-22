@@ -3,13 +3,14 @@
         <div class="detail_title">詳細画面</div>
         <div>
             <div class="detail_comment" v-for="item in items" v-bind:key="item.id">
-                <div class="detail_date">読了日：{{ item.finish_date }}</div>
+                <div class="detail_date">読み終えた日：{{ item.finish_date }}</div>
                 <div class="detail_comment_text">{{ item.description }}</div>
                 <!-- <div>{{ charaCount }}文字</div> -->
                 <div class="detail_items">タイトル：{{ item.title }}</div>
                 <div class="detail_items">著者名：{{ item.author }}</div>
                 <div class="detail_items">出版社名：{{ item.publisher }}</div>
-                <div class="detail_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>        
+                <div class="detail_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>
+                <div class="detail_items update_btn" v-on:click="onUpdate(item.id)" v-bind:key="item.id">更新</div>      
             </div>
         </div>
         <router-link to="/" class="return_home_btn">ホームに戻る</router-link>
@@ -44,6 +45,21 @@ export default {
                 id: task_id
             }).then((res) => {
                 this.items = res.data
+            })
+            return redirect('/');
+        },
+        onUpdate: function(task_id) {
+            axios.post('/api/update', {
+                id: task_id,
+                title: this.items.title,
+                author: this.items.author,
+                publisher: this.items.publisher,
+                finish_date: this.items.finish_date,
+                description: this.items.description
+
+            }).then((res) => {
+                this.items = res.data
+                console.log('update');
             })
             return redirect('/');
         }
@@ -100,7 +116,8 @@ export default {
     text-decoration: none;
     width: 590px;
     text-align: center;
-    padding: 5px;
+    padding: 5px 0 5px 0 ;
     margin-bottom: 20px;
+    font-size: 11px;
 }
 </style>
