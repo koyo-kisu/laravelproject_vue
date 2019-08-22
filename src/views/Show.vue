@@ -13,7 +13,8 @@
                 <div class="detail_items">著者名：{{ item.author }}</div>
                 <div class="detail_items">出版社名：{{ item.publisher }}</div>
                 <div class="detail_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>
-                <div class="detail_items update_btn" v-on:click="onUpdate(item.id)" v-bind:key="item.id">更新</div>      
+                <div class="detail_items update_btn" v-on:click="onUpdate(item.id)" v-bind:key="item.id">更新</div>
+                <div class="detail_items edit_btn" v-on:click="(editFlg = true)" v-if="!editFlg">編集</div>    
             </div>
         </div>
         <router-link to="/" class="return_home_btn">ホームに戻る</router-link>
@@ -30,6 +31,7 @@ export default {
             new_create: '',
             items: [],
             keyword: this.title,
+            editFlg: false,
         }
     },
     // computed: {
@@ -78,7 +80,8 @@ export default {
                 description: this.items.description
 
             }).then((res) => {
-                this.items = res.data
+                this.items = res.data;
+                this.editFlg = false,
                 console.log('update');
             })
         }
@@ -96,7 +99,7 @@ export default {
 }
 
 .key_search {
-    width: 570px;
+    width: 565px;
     height: 20px;
 }
 
