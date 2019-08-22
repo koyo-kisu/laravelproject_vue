@@ -2,10 +2,13 @@
     <div class="detail_contents">
         <div class="detail_title">詳細画面</div>
         <div>
+            <router-link to="/" class="return_home_btn_top">ホーム</router-link>
+        </div>
+        <div>
             <div class="detail_comment" v-for="item in items" v-bind:key="item.id">
                 <div class="detail_date">読了日：{{ item.created_at }}</div>
                 <div>{{ item.id }}</div>
-                <div class="detail_comment_text">{{ item.description}}</div>
+                <div class="detail_comment_text">{{ item.description }}</div>
                 <!-- <div>{{ charaCount }}文字</div> -->
                 <div class="detail_items">タイトル：{{ item.title }}</div>
                 <div class="detail_items">著者名：{{ item.author }}</div>
@@ -60,6 +63,11 @@ export default {
     width: 600px;
 }
 
+.return_home_btn_top {
+    color: black;
+    float: right
+}
+
 .detail_title {
     text-align: center;
     padding-bottom: 30px;
@@ -102,9 +110,5 @@ export default {
     text-align: center;
     padding: 5px;
     margin-bottom: 20px;
-}
-
-.return_home_btn:hover {
-    background: yellow;
 }
 </style>

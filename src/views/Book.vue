@@ -29,7 +29,7 @@
             <router-link to="/Add" class="add_page_transition">追加フォームへ</router-link>
         </div>
         <div class="show_page_btn">
-            <router-link to="/show" class="show_page_transition">レビューを詳しく見る</router-link>
+            <router-link to="/show" class="show_page_transition">詳しく見る</router-link>
         </div>
     </div>
 </template>
@@ -121,7 +121,6 @@ export default {
 
 .key_search {
     width: 500px;
-    height: 25px;
 }
 
 .key_search_btn {
@@ -154,6 +153,7 @@ td {
     color: black;
     text-decoration: none;
     margin-bottom: 10px;
+    width: 600px;
 }
 
 .show_page_transition {
@@ -161,6 +161,7 @@ td {
     padding: 5px 15px;
     color: black;
     text-decoration: none;
+    width: 600px;
 }
 
 .book_contents {

@@ -120,6 +120,7 @@ export default {
 
 .txt, .txa {
     width: 600px;
+    color: black;
 }
 
 .add_btn {
@@ -141,6 +142,7 @@ export default {
     color: black;
     text-decoration: none;
     text-align: center;
+    width: 600px;
 }
 
 </style>
