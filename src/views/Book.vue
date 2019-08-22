@@ -3,7 +3,7 @@
         <div class="book_title">読書管理表</div>
         <div class="search_item">
             <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
-            <button v-on:click="filteredItems" class="key_search_btn" value="検索"></button>
+            <button v-on:click="filteredItems" class="key_search_btn">検索</button>
         </div>
         <div class="book_contents">
             <thead>
@@ -27,7 +27,9 @@
         </div>
         <div class="add_page_btn">
             <router-link to="/Add" class="add_page_transition">追加フォームへ</router-link>
-            <router-link to="/" class="add_page_transition">ホームに戻る</router-link>
+        </div>
+        <div>
+            <router-link to="/" class="book_return_home">ホームに戻る</router-link>
         </div>
     </div>
 </template>
@@ -118,7 +120,7 @@ export default {
 }
 
 .key_search {
-    width: 250px;
+    width: 500px;
     height: 25px;
 }
 
@@ -151,6 +153,15 @@ td {
     color: black;
     text-decoration: none;
     margin-bottom: 10px;
+    width: 600px;
+}
+
+.book_return_home {
+    border: 1px solid gray;
+    padding: 5px 15px;
+    color: black;
+    text-decoration: none;
+    width: 600px;
 }
 
 .book_contents {
