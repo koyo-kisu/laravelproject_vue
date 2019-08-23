@@ -13,7 +13,6 @@
                 <div class="detail_items">著者名：{{ item.author }}</div>
                 <div class="detail_items">出版社名：{{ item.publisher }}</div>
                 <div class="detail_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>
-                <div class="detail_items update_btn" v-on:click="onUpdate(item.id)" v-bind:key="item.id">更新</div>
                 <div class="detail_items edit_btn" v-on:click="onEdit(item.id)" v-bind:key="item.id">編集</div>  
             </div>
         </div>
@@ -63,22 +62,6 @@ export default {
                 return texts;
             })
         },
-        onUpdate: function(task_id) {
-            axios.post('/api/update', {
-                id: task_id,
-                title: this.items.title,
-                author: this.items.author,
-                publisher: this.items.publisher,
-                finish_date: this.items.finish_date,
-                description: this.items.description
-
-            }).then((res) => {
-                this.items = res.data;
-                this.editFlg = false,
-                location.href = "/show"
-                console.log('update');
-            })
-        },
         onEdit: function(task_id) {
             axios.post('/api/edit', {
                 id: task_id,
@@ -89,7 +72,7 @@ export default {
                 description: this.items.description
             }).then((res) => {
                 this.items = res.data;
-                location.href = "/add"
+                location.href = "/#/show"
             })
         }
     },
