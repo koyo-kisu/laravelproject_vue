@@ -46,6 +46,7 @@ export default {
         typedAuthor: '',
         typedPublisher: '',
         typedDate: '',
+        error: {},
       }
     },
     computed: {
@@ -82,25 +83,7 @@ export default {
                 this.error = '感想は必須です'
                 return
             }
-        },
-    // watch: {
-    //     charaCount: function() {
-    //         if(charaCount > 201) {
-    //             console.log('200文字以内で入力してください')
-    //         }
-    //     }
-    // }
-    // watch: {
-    //     name: function() {
-    //     this.error.tooLong = (typedText.length > 201) ? true : false;
-    //     }
-    // },
-    // data: {
-    //     name: characterLimit,
-    //     error: {
-    //     tooLong: false,
-    //     }
-    // },  
+        }, 
     }   
 }
 </script>
