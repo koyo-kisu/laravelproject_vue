@@ -89,7 +89,7 @@ export default {
                 description: this.items.description
             }).then((res) => {
                 this.items = res.data;
-                location.href = "/show"
+                location.href = "/add"
             })
         }
     },
