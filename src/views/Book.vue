@@ -15,12 +15,6 @@
                 </tr>
             </tbody>
         </div>
-        <div class="overflow-auto">
-            <div class="mt-3">
-                <h6 class="text-center">ページ移動ボタン</h6>
-                <b-pagination v-model="currentPage" :total-rows="rows" align="center" name="pagination" :per-page="perPage"></b-pagination>
-            </div>
-        </div>
         <div class="add_page_btn">
             <router-link to="/Add" class="add_page_transition">追加フォームへ</router-link>
         </div>
@@ -42,9 +36,6 @@ export default {
                 '著者名',
                 '出版社',
             ],
-            rows: 100,
-            currentPage: 1,
-            perPage: 5,
         }
     },
     methods: {
@@ -59,13 +50,6 @@ export default {
     created() {
         this.fetchTexts()
     },
-    // mounted() {
-    //     var url = '/api/books';
-    //     axios.get(url).then(function(response){
-    //         var = response.data;
-    //         console.log();
-    //     });
-    // }
 }
 </script>
 

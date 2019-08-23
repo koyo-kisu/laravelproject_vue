@@ -14,8 +14,7 @@
                 <div class="detail_items">出版社名：{{ item.publisher }}</div>
                 <div class="detail_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>
                 <div class="detail_items update_btn" v-on:click="onUpdate(item.id)" v-bind:key="item.id">更新</div>
-                <div class="detail_item edit_btn" v-on:click="onEdit(item.id)" v-bind:key="item.id">編集</div>
-                <div class="detail_items edit_btn" v-on:click="(editFlg = true)" v-if="!editFlg">編集</div>    
+                <div class="detail_item edit_btn" v-on:click="onEdit(item.id)" v-bind:key="item.id">編集</div>  
             </div>
         </div>
         <router-link to="/" class="return_home_btn">ホームに戻る</router-link>
@@ -39,7 +38,6 @@ export default {
         fetchTexts: function() {
             axios.get('/api/books').then((res)=>{
                 this.items = res.data
-                // console.log(res)
             })
         },
         delText: function(task_id) {
@@ -91,7 +89,7 @@ export default {
                 description: this.items.description
             }).then((res) => {
                 this.items = res.data;
-                location.href = "/"
+                location.href = "/show"
             })
         }
     },

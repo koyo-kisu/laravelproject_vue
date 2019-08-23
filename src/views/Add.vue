@@ -3,7 +3,6 @@
         <div class="add_title">レビュー追加画面</div>
         <label class="add_item">
             <div>タイトル</div>
-            <div v-if="error" class="error">{{ error }}</div>
             <div><input type="text" class="txt" v-model="typedTitle"></div>
         </label>
          <label class="add_item">
@@ -46,7 +45,6 @@ export default {
         typedAuthor: '',
         typedPublisher: '',
         typedDate: '',
-        errors: '',
       }
     },
     computed: {
@@ -77,18 +75,6 @@ export default {
             }
                 self.errors = errors;
             })
-            // if(this.item.title.trim() === '') {
-            //     this.error = 'タイトルは必須です'
-            //     return
-            // }
-            // if (this.item.author.trim() === '') {
-            //     this.error = '著者名は必須です'
-            //     return
-            // }
-            // if (this.item.description.trim() === '') {
-            //     this.error = '感想は必須です'
-            //     return
-            // }
         }, 
     }   
 }
