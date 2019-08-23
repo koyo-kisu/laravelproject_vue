@@ -17,7 +17,7 @@
         </label>
         <label class="add_item">
             <div>読了日</div>
-            <div><input type="date" value="2019-01-01" v-model="finish_date"></div>
+            <div><input type="date" value='2019-08-01' v-model="finish_date"></div>
         </label>
         <label>
             <div>感想</div>

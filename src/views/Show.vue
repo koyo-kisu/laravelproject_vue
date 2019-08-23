@@ -34,11 +34,6 @@ export default {
             editFlg: false,
         }
     },
-    // computed: {
-    //     charaCount: function() {
-    //         return this.typedText.length;
-    //     }
-    // },
     methods: {
         fetchTexts: function() {
             axios.get('/api/books').then((res)=>{
@@ -153,6 +148,14 @@ export default {
     margin-bottom: 5px;
     float: right;
     /* margin-left: 10px; */
+}
+
+.edit_btn {
+    background: red;
+    width: 35px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 5px;
 }
 
 .return_home_btn, .return_add_btn {
