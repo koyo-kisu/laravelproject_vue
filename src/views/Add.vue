@@ -46,7 +46,7 @@ export default {
         typedAuthor: '',
         typedPublisher: '',
         typedDate: '',
-        error: {},
+        errors: '',
       }
     },
     computed: {
@@ -70,19 +70,25 @@ export default {
                 this.typedPublisher = '',
                 this.typedText = '',
                 this.finish_date = ''
+            }).catch(function(error) {
+                var errors = '';
+                for(var key in error.response.data.errors) {
+                errors[key] = error.response.data.errors[key].join('<br>');
+            }
+                self.errors = errors;
             })
-            if(this.item.title.trim() === '') {
-                this.error = 'タイトルは必須です'
-                return
-            }
-            if (this.item.author.trim() === '') {
-                this.error = '著者名は必須です'
-                return
-            }
-            if (this.item.description.trim() === '') {
-                this.error = '感想は必須です'
-                return
-            }
+            // if(this.item.title.trim() === '') {
+            //     this.error = 'タイトルは必須です'
+            //     return
+            // }
+            // if (this.item.author.trim() === '') {
+            //     this.error = '著者名は必須です'
+            //     return
+            // }
+            // if (this.item.description.trim() === '') {
+            //     this.error = '感想は必須です'
+            //     return
+            // }
         }, 
     }   
 }
