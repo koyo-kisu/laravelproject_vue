@@ -45,7 +45,7 @@ export default {
             axios.post('/api/del', {
                 id: task_id
             }).then((res) => {
-                location.href = "/books" 
+                location.href = "/" 
             })
         },
         filteredItems: function() {
