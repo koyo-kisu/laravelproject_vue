@@ -106,6 +106,7 @@ td {
     padding: 5px 15px;
     color: black;
     text-decoration: none;
+    margin-top: 20px;
     margin-bottom: 10px;
     width: 600px;
     text-align: center;

@@ -14,7 +14,7 @@
                 <div class="detail_items">出版社名：{{ item.publisher }}</div>
                 <div class="detail_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>
                 <div class="detail_items update_btn" v-on:click="onUpdate(item.id)" v-bind:key="item.id">更新</div>
-                <div class="detail_item edit_btn" v-on:click="onEdit(item.id)" v-bind:key="item.id">編集</div>  
+                <div class="detail_items edit_btn" v-on:click="onEdit(item.id)" v-bind:key="item.id">編集</div>  
             </div>
         </div>
         <router-link to="/" class="return_home_btn">ホームに戻る</router-link>
@@ -159,7 +159,6 @@ export default {
     cursor: pointer;
     margin-bottom: 5px;
     float: right;
-    /* margin-left: 10px; */
 }
 
 .edit_btn {
@@ -168,6 +167,7 @@ export default {
     text-align: center;
     cursor: pointer;
     margin-bottom: 5px;
+    margin-left: 10px;
 }
 
 .return_home_btn, .return_add_btn {
