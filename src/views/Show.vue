@@ -30,7 +30,6 @@ export default {
             new_create: '',
             items: [],
             keyword: this.title,
-            editFlg: false,
         }
     },
     methods: {
