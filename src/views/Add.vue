@@ -1,27 +1,37 @@
 <template>
     <div class="add_contents">
         <div class="add_title">レビュー追加画面</div>
+        <!-- <form action="">formタグに描く場合はaction属性の中身（データの送信先）はどこに指定したらいいの？</form> -->
         <label class="add_item">
             <div>タイトル</div>
-            <div><input type="text" class="txt" v-model="typedTitle"></div>
+            <div><input name = "title"  type="text" class="txt" v-model="typedTitle" required value="{{ old('title') }}" ></div>
+            <div class="error" v-for="error in errors" v-bind:key="error">{{ error }}</div>
         </label>
          <label class="add_item">
-             <div>著者名</div>
-             <div v-if="error" class="error">{{ error }}</div>
-            <div><input type="text" class="txt" v-model="typedAuthor"></div>
+            <div>著者名</div>
+            <div><input name="author" type="text" class="txt" v-model="typedAuthor" required value="{{ old('author') }}"></div>
+            <div class="error" v-for="error in errors" v-bind:key="error">{{ error }}</div>
         </label>
          <label class="add_item">
              <div>出版社</div>
-            <div><input type="text" class="txt" v-model="typedPublisher"></div>
+            <div><input name="publisher" type="text" class="txt" v-model="typedPublisher" value="{{ old('publisher') }}"></div>
         </label>
         <label class="add_item">
             <div>読了日</div>
-            <div><input type="date" value='2019-08-01' v-model="finish_date"></div>
+            <div><input name="finish_date" type="date" v-model="finish_date" value="{{ old('finish_date') }}"></div>
+        </label>
+        <label for="select_genre" class="add_item">
+            <div>ジャンル</div>
+            <select name="genre" id="genre" v-model="typedGenre">
+                <option>小説</option>
+                <option>ビジネス本</option>
+                <option>哲学</option>
+                <option>漫画</option>
+            </select>
         </label>
         <label>
             <div>感想</div>
-             <div v-if="error" class="error">{{ error }}</div>
-            <textarea v-model="typedText" name="" class="txa" cols="20" rows="10"></textarea>
+            <textarea v-model="typedText" name="description" class="txa" cols="20" rows="10" value="{{ old('description') }}"></textarea>
             <p>{{ charaCount }} 文字</p>
         </label>
         <br>
@@ -45,6 +55,8 @@ export default {
         typedAuthor: '',
         typedPublisher: '',
         typedDate: '',
+        typedGenre: '',
+        errors: []
       }
     },
     computed: {
@@ -59,7 +71,8 @@ export default {
                 author: this.typedAuthor,
                 publisher: this.typedPublisher,
                 description: this.typedText,
-                finish_date: this.finish_date
+                finish_date: this.finish_date,
+                genre: this.typedGenre
 
             }).then((res) => {
                 this.items = res.data,
@@ -67,13 +80,17 @@ export default {
                 this.typedAuthor = '',
                 this.typedPublisher = '',
                 this.typedText = '',
-                this.finish_date = ''
+                this.finish_date = '',
+                this.typedGenre = ''
+
             }).catch(function(error) {
-                var errors = '';
-                for(var key in error.response.data.errors) {
-                errors[key] = error.response.data.errors[key].join('<br>');
-            }
-                self.errors = errors;
+                this.errors = [];
+                if(!this.title) {
+                    this.errors.push("タイトルは必須です");
+                }
+                if(!this.author) {
+                    this.errors.push("著者名は必須です");
+                }
             })
         }, 
     }   
