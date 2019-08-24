@@ -20,6 +20,15 @@
             <div>読了日</div>
             <div><input type="date" value='2019-08-01' v-model="finish_date"></div>
         </label>
+        <label for="select_genre" class="add_item">
+            <div>ジャンル</div>
+            <select name="genre" id="genre" v-model="typedGenre">
+                <option>小説</option>
+                <option>ビジネス本</option>
+                <option>哲学</option>
+                <option>漫画</option>
+            </select>
+        </label>
         <label>
             <div>感想</div>
              <div v-if="error" class="error">{{ error }}</div>

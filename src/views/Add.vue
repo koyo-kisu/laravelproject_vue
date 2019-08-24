@@ -4,7 +4,7 @@
         <!-- <form action="">formタグに描く場合はaction属性の中身（データの送信先）はどこに指定したらいいの？</form> -->
         <label class="add_item">
             <div>タイトル</div>
-            <div><input name = "title"  type="text" class="txt" v-model="typedTitle" required value="{{ old('title') }}" ></div>
+            <div><input name = "title"  type="text" class="txt" v-model="typedTitle" required value="{{ old('title') }}"></div>
             <div class="error" v-for="error in errors" v-bind:key="error">{{ error }}</div>
         </label>
          <label class="add_item">
