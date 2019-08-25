@@ -50,7 +50,7 @@ export default {
         typedTitle: '',
         typedAuthor: '',
         typedPublisher: '',
-        typedDate: '',
+        typedDate: '2019-08-24',
         typedGenre: '小説',
         roles: [
             "小説",
@@ -77,7 +77,7 @@ export default {
                 publisher: this.typedPublisher,
                 description: this.typedText,
                 finish_date: this.finish_date,
-                genre: this.typedGenre
+                genre: this.typedGenre,
 
             }).then((res) => {
                 if (res.data.error){
