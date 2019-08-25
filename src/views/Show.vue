@@ -1,20 +1,20 @@
 <template>
-    <div class="detail_contents">
-        <div class="detail_title">詳細画面</div>
+    <div class="show_contents">
+        <div class="show_title">一覧画面</div>
         <div class="search_item">
             <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
             <button v-on:click="filteredItems" class="key_search_btn">検索</button>
         </div>
         <div>
-            <div class="detail_comment" v-for="item in items" v-bind:key="item.id">
-                <div class="detail_date">読み終えた日：{{ item.finish_date }}</div>
-                <div class="detail_comment_text">{{ item.description }}</div>
-                <div class="detail_items">タイトル：{{ item.title }}</div>
-                <div class="detail_items">著者名：{{ item.author }}</div>
-                <div class="detail_items">出版社名：{{ item.publisher }}</div>
-                <div class="detail_items">ジャンル：{{ item.jenre }}</div>
-                <div class="detail_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>
-                <div class="detail_items edit_btn" v-on:click="onEdit(item.id)" v-bind:key="item.id">編集</div>  
+            <div class="show_comment" v-for="item in items" v-bind:key="item.id">
+                <div class="show_date">読み終えた日：{{ item.finish_date }}</div>
+                <div class="show_comment_text">{{ item.description }}</div>
+                <div class="show_items">タイトル：{{ item.title }}</div>
+                <div class="show_items">著者名：{{ item.author }}</div>
+                <div class="show_items">出版社名：{{ item.publisher }}</div>
+                <div class="show_items">ジャンル：{{ item.jenre }}</div>
+                <div class="show_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>
+                <div class="show_items edit_btn" v-on:click="onEdit(item.id)" v-bind:key="item.id">編集</div>  
             </div>
         </div>
         <router-link to="/" class="return_home_btn">ホームに戻る</router-link>
@@ -30,7 +30,7 @@ export default {
         return {
             new_create: '',
             items: [],
-            keyword: this.title,
+            keyword: this.title | this.author,
         }
     },
     methods: {
@@ -72,7 +72,7 @@ export default {
                 description: this.items.description
             }).then((res) => {
                 this.items = res.data;
-                location.href = "/#/show"
+                location.href = "/#/detail"
             })
         }
     },
@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style>
-.detail_contents {
+.show_contents {
     margin: 0 auto;
     width: 600px;
 }
@@ -103,26 +103,26 @@ export default {
     width: 600px;
 }
 
-.detail_title {
+.show_title {
     text-align: center;
     padding-bottom: 30px;
 }
 
-.detail_date {
+.show_date {
     text-align: right;
 }
 
-.detail_comment {
+.show_comment {
     border: 1px solid black;
     margin-bottom: 20px;
 }
 
-.detail_comment_text {
+.show_comment_text {
     word-wrap: break-word;
     padding: 10px;
 }
 
-.detail_items {
+.show_items {
     padding: 5px 10px;
 }
 
