@@ -17,7 +17,7 @@
         </label>
         <label class="add_item">
             <div>読了日</div>
-            <div><input name="finish_date" type="date" v-model="finish_date"></div>
+            <div><input name="finish_date" type="date" v-model="typedDate"></div>
         </label>
         <label for="select_genre" class="add_item">
             <div>ジャンル</div>
@@ -76,7 +76,7 @@ export default {
                 author: this.typedAuthor,
                 publisher: this.typedPublisher,
                 description: this.typedText,
-                finish_date: this.finish_date,
+                finish_date: this.typedDate,
                 genre: this.typedGenre,
 
             }).then((res) => {
@@ -89,7 +89,7 @@ export default {
                     this.typedAuthor = '',
                     this.typedPublisher = '',
                     this.typedText = '',
-                    this.finish_date = '',
+                    this.typedDate = '',
                     this.typedGenre = ''
                 }
             })
