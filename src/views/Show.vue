@@ -93,12 +93,12 @@ export default {
         itemCount: function() {
             return this.items.length;
         },
-        commentCount: function() {
-            var filtered = this.items.filter(function(description) {
-                return (this.items.description !== null);
-            });
-            console.log(filtered);
-        },
+        // commentCount: function() {
+        //     var filtered = this.items.filter(function(description) {
+        //         return (this.items.description !== null);
+        //     });
+        //     console.log(filtered);
+        // },
     },
     created() {
         this.fetchTexts()
