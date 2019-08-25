@@ -4,7 +4,7 @@
         <label class="add_item">
             <div>タイトル</div>
             <div><input name = "title"  type="text" class="txt" v-model="typedTitle" required></div>
-            <div v-if="error.titleErr">{{ error.titleErr }}</div>
+            <div class="error" v-if="error.titleErr">{{ error.titleErr }}</div>
         </label>
          <label class="add_item">
             <div>著者名</div>
@@ -60,8 +60,8 @@ export default {
         ],
         error: {
             titleErr:"タイトルを入力してしてください。",
-            authorErr: "著者"
-            },
+            authorErr: "著者名を入力してください"
+        },
       }
     },
     computed: {
@@ -92,8 +92,6 @@ export default {
                     this.finish_date = '',
                     this.typedGenre = ''
                 }
-                
-
             })
         }, 
     }, 

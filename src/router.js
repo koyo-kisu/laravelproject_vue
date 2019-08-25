@@ -4,7 +4,6 @@ import Book from './views/Book.vue'
 import Add from './views/Add.vue'
 import Show from './views/Show.vue'
 import Edit from './views/Edit.vue'
-import Detail from './views/Detail.vue'
 import Login from './views/Login.vue'
 
 Vue.use(Router)
@@ -30,11 +29,6 @@ export default new Router({
       path: '/edit',
       name: 'edit',
       component: Edit
-    },
-    {
-      path: '/detail',
-      name: 'detail',
-      component: Detail
     },
     {
       path: '/login',
