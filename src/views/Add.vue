@@ -97,12 +97,7 @@ export default {
                 }
             })
         }, 
-    },
-    // mounted: function() {
-    //     this.roles = [
-            
-    //     ]
-    // }   
+    }, 
 }
 </script>
 

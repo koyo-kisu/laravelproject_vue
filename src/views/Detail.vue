@@ -35,6 +35,15 @@ export default {
                 location.href = "/" 
             })
         },
+        fetchTexts: function() {
+            axios.get('/api/books').then((res)=>{
+                this.items = res.data
+                console.log(res)
+            })
+        },
+        created() {
+            this.fetchTexts()
+        },
     }
 }
 </script>
