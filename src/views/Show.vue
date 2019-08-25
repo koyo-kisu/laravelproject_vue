@@ -30,10 +30,10 @@ export default {
         return {
             new_create: '',
             items: [],
-            keyword: [
+            keyword: 
                 this.title ,
-                this.author
-            ]
+            //     this.author
+            // ]
         }
     },
     methods: {

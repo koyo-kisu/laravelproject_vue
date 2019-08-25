@@ -22,7 +22,7 @@ export default {
     data: function() {
         return {
             items: [],
-            keyword: this.title | this.author ,
+            keyword: this.title
         }
     },
     methods: {
