@@ -5,12 +5,12 @@
         <label class="add_item">
             <div>タイトル</div>
             <div><input name = "title"  type="text" class="txt" v-model="typedTitle" required></div>
-            <div class="error" v-for="error in errors" v-bind:key="error">{{ error }}</div>
+            <div v-if="error.titleErr">{{ error.titleErr }}</div>
         </label>
          <label class="add_item">
             <div>著者名</div>
             <div><input name="author" type="text" class="txt" v-model="typedAuthor" required></div>
-            <div class="error" v-for="error in errors" v-bind:key="error">{{ error }}</div>
+            <div class="error" v-if="error.authorErr">{{ error.authorErr }}</div>
         </label>
          <label class="add_item">
              <div>出版社</div>
@@ -55,13 +55,16 @@ export default {
         typedPublisher: '',
         typedDate: '',
         typedGenre: '',
-        errors: [],
         roles: [
             "小説",
             "ビジネス本",
             "哲学",
             "漫画"
-        ]
+        ],
+        error: {
+            titleErr:"タイトルを入力してしてください。",
+            authorErr: "著者"
+            },
       }
     },
     computed: {
@@ -80,13 +83,19 @@ export default {
                 genre: this.typedGenre
 
             }).then((res) => {
-                this.items = res.data,
-                this.typedTitle = '',
-                this.typedAuthor = '',
-                this.typedPublisher = '',
-                this.typedText = '',
-                this.finish_date = '',
-                this.typedGenre = ''
+                if (res.data.error){
+                    this.errors = res.data.error
+                }
+                else {
+                    this.items = res.data,
+                    this.typedTitle = '',
+                    this.typedAuthor = '',
+                    this.typedPublisher = '',
+                    this.typedText = '',
+                    this.finish_date = '',
+                    this.typedGenre = ''
+                }
+                
 
             }).catch(function(error) {
                 this.errors = [];
