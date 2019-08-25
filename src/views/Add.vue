@@ -4,26 +4,27 @@
         <!-- <form action="">formタグに描く場合はaction属性の中身（データの送信先）はどこに指定したらいいの？</form> -->
         <label class="add_item">
             <div>タイトル</div>
-            <div><input name = "title"  type="text" class="txt" v-model="typedTitle" required value="{{ old('title') }}"></div>
+            <div><input name = "title"  type="text" class="txt" v-model="typedTitle" required></div>
             <div class="error" v-for="error in errors" v-bind:key="error">{{ error }}</div>
         </label>
          <label class="add_item">
             <div>著者名</div>
-            <div><input name="author" type="text" class="txt" v-model="typedAuthor" required value="{{ old('author') }}"></div>
+            <div><input name="author" type="text" class="txt" v-model="typedAuthor" required></div>
             <div class="error" v-for="error in errors" v-bind:key="error">{{ error }}</div>
         </label>
          <label class="add_item">
              <div>出版社</div>
-            <div><input name="publisher" type="text" class="txt" v-model="typedPublisher" value="{{ old('publisher') }}"></div>
+            <div><input name="publisher" type="text" class="txt" v-model="typedPublisher"></div>
         </label>
         <label class="add_item">
             <div>読了日</div>
-            <div><input name="finish_date" type="date" v-model="finish_date" value="{{ old('finish_date') }}"></div>
+            <div><input name="finish_date" type="date" v-model="finish_date"></div>
         </label>
         <label for="select_genre" class="add_item">
             <div>ジャンル</div>
             <!-- v-model付与してもoptionの選択肢は反映されない問題　optionにv-modelは使えない模様 -->
-            <select name="genre" id="genre" v-model="typedGenre">
+            <select name="genre" id="genre" v-model="typedGenre" value="小説" v-for="role in roles" v-bind:key="role">
+                {{ role }}
                 <option>小説</option>
                 <option>ビジネス本</option>
                 <option>哲学</option>
@@ -57,7 +58,13 @@ export default {
         typedPublisher: '',
         typedDate: '',
         typedGenre: '',
-        errors: []
+        errors: [],
+        roles: [
+            "小説",
+            "ビジネス本",
+            "哲学",
+            "漫画"
+        ]
       }
     },
     computed: {
@@ -94,7 +101,12 @@ export default {
                 }
             })
         }, 
-    }   
+    },
+    // mounted: function() {
+    //     this.roles = [
+            
+    //     ]
+    // }   
 }
 </script>
 

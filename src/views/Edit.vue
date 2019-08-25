@@ -21,7 +21,8 @@
             </label>
             <label for="select_genre" class="edit_item">
                 <div>ジャンル</div>
-                <select name="genre" id="genre" v-model="typedGenre">
+                <select name="genre" id="genre" v-model="typedGenre" value="小説" v-for="role in roles" v-bind:key="role">
+                    <option>{{ role }}</option>
                     <option>小説</option>
                     <option>ビジネス本</option>
                     <option>哲学</option>
@@ -57,7 +58,13 @@ export default {
             typedPublisher: '',
             typedDate: '',
             typedGenre: '',
-            errors: []
+            errors: [],
+            roles: [
+                "小説",
+                "ビジネス本",
+                "哲学",
+                "漫画"
+            ]
         }
     },
     methods: {
@@ -89,7 +96,12 @@ export default {
                 }
             })
         }, 
-    }
+    },
+    computed: {
+        charaCount: function() {
+            return this.typedText.length;
+        }
+    },
 }
 </script>
 
