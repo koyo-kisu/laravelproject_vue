@@ -30,7 +30,10 @@ export default {
         return {
             new_create: '',
             items: [],
-            keyword: this.title | this.author,
+            keyword: [
+                this.title ,
+                this.author
+            ]
         }
     },
     methods: {
@@ -48,6 +51,7 @@ export default {
         },
         filteredItems: function() {
             axios.post('/api/search', {
+                title: this.keyword,
                 title: this.keyword
             }).then((res) => {
                 this.items = res.data
@@ -69,10 +73,11 @@ export default {
                 author: this.items.author,
                 publisher: this.items.publisher,
                 finish_date: this.items.finish_date,
-                description: this.items.description
+                description: this.items.description,
+                jenre: this.items.jenre
             }).then((res) => {
                 this.items = res.data;
-                location.href = "/#/detail"
+                location.href = "/#/edit"
             })
         }
     },
