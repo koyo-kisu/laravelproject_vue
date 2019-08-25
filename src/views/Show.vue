@@ -1,6 +1,8 @@
 <template>
     <div class="show_contents">
         <div class="show_title">一覧画面</div>
+        <div class="number_books">読み終えた本：{{ itemCount }}冊</div>
+        <div class="number_comments">感想がある本{{ commentCount }}冊</div>
         <div class="search_item">
             <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
             <button v-on:click="filteredItems" class="key_search_btn">検索</button>
@@ -76,6 +78,14 @@ export default {
                 this.items = res.data;
                 location.href = "/#/edit"
             })
+        }
+    },
+    computed: {
+        itemCount: function() {
+            return this.items.length;
+        },
+        commentCount: function() {
+            return this.items.description.length;
         }
     },
     created() {

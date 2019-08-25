@@ -1,7 +1,7 @@
 <template>
     <div class="book">
         <div class="book_title">読書管理アプリ</div>
-        <div>{{ itemCount }}</div>
+        <div class="number_books">読み終えた本：{{ itemCount }}冊</div>
         <div class="book_contents">
             <thead>
                 <tr>
@@ -70,19 +70,8 @@ export default {
     padding-bottom: 30px;
 }
 
-.search_item {
-    margin-bottom: 30px;
-}
-
-.key_search {
-    width: 500px;
-    height: 20px;
-}
-
-.key_search_btn {
-    display: inline-block;
-    height: 25px;
-    margin-left: 5px;
+.number_books {
+    margin-bottom: 20px;
 }
 
 th {
