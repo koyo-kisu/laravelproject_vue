@@ -76,6 +76,12 @@ export default {
                 jenre: this.items.jenre
             }).then((res) => {
                 this.items = res.data;
+                this.typedTitle = '',
+                this.typedAuthor = '',
+                this.typedPublisher = '',
+                this.typedText = '',
+                this.finish_date = '',
+                this.typedGenre = ''
                 location.href = "/#/edit"
             })
         }
@@ -85,6 +91,7 @@ export default {
             return this.items.length;
         },
         commentCount: function() {
+            // descriptionの数を表示させたいがdescriptionが未定義になる
             return this.item.description.length;
         },
     },
