@@ -90,10 +90,10 @@ export default {
         itemCount: function() {
             return this.items.length;
         },
-        commentCount: function() {
-            // descriptionの数を表示させたいがdescriptionが未定義になる
-            return this.item.description.length;
-        },
+        // commentCount: function() {
+        //     // descriptionの数を表示させたいがdescriptionが未定義になる
+        //     return this.item.description.length;
+        // },
     },
     created() {
         this.fetchTexts()
