@@ -59,7 +59,7 @@ export default {
             "漫画"
         ],
         error: {
-            titleErr:"タイトルを入力してしてください。",
+            titleErr:"タイトルを入力してしてください",
             authorErr: "著者名を入力してください"
         },
       }

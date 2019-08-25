@@ -22,7 +22,7 @@
             <label for="select_genre" class="edit_item">
                 <div>ジャンル</div>
                 <select name="genre" id="genre" v-model="typedGenre">
-                    <option selected="小説" v-for="role in roles" v-bind:key="role">{{ role }}</option>
+                    <option v-for="role in roles" v-bind:key="role">{{ role }}</option>
                 </select>
             </label>
             <label>

@@ -91,9 +91,10 @@ export default {
             return this.items.length;
         },
         commentCount: function() {
-            return this.items.filter(function(description) {
-                return (items.description != null);
+            var filtered = this.items.filter(function(description) {
+                return (items.description !== null);
             });
+            console.log(filtered);
         },
     },
     created() {
