@@ -1,6 +1,7 @@
 <template>
     <div class="book">
         <div class="book_title">読書管理アプリ</div>
+        <div>{{ itemCount }}</div>
         <div class="book_contents">
             <thead>
                 <tr>
@@ -50,6 +51,11 @@ export default {
     created() {
         this.fetchTexts()
     },
+    computed: {
+        itemCount: function() {
+            return this.items.length;
+        }
+    }
 }
 </script>
 
