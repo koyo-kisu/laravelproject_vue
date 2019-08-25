@@ -17,16 +17,12 @@
             </label>
             <label class="edit_item">
                 <div>読了日</div>
-                <div><input type="date" value='2019-08-01' v-model="finish_date"></div>
+                <div><input type="date" selected='2019-08-01' v-model="finish_date"></div>
             </label>
             <label for="select_genre" class="edit_item">
                 <div>ジャンル</div>
-                <select name="genre" id="genre" v-model="typedGenre" value="小説" v-for="role in roles" v-bind:key="role">
-                    <option>{{ role }}</option>
-                    <option>小説</option>
-                    <option>ビジネス本</option>
-                    <option>哲学</option>
-                    <option>漫画</option>
+                <select name="genre" id="genre" v-model="typedGenre">
+                    <option selected="小説" v-for="role in roles" v-bind:key="role">{{ role }}</option>
                 </select>
             </label>
             <label>
