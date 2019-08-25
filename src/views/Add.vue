@@ -23,6 +23,7 @@
         <label for="select_genre" class="add_item">
             <div>ジャンル</div>
             <!-- v-model付与してもoptionの選択肢は反映されない問題　optionにv-modelは使えない模様 -->
+            <!-- 初期値を設定しておくにはv-for使わない方がいいかも optionにselectedを追加 -->
             <select name="genre" id="genre" v-model="typedGenre">
                 <option selected="小説" v-for="role in roles" v-bind:key="role">{{ role }}</option>
             </select>

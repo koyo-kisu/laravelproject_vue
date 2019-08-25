@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">メインページ</router-link> |
       <router-link to="/add">追加する</router-link> |
-      <router-link to="/show">一覧画面</router-link> |
+      <router-link to="/show">感想画面</router-link> |
       <router-link to="/edit">編集画面</router-link> |
       <router-link to="/detail">詳細画面</router-link>
     </div>
