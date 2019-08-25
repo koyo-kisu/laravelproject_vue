@@ -44,6 +44,7 @@ export default {
         delText: function(task_id) {
             axios.post('/api/del', {
                 id: task_id
+
             }).then((res) => {
                 location.href = "/" 
             })
@@ -52,6 +53,7 @@ export default {
             axios.post('/api/search', {
                 title: this.keyword,
                 author: this.keyword
+
             }).then((res) => {
                 this.items = res.data
                 var texts = [];
@@ -74,14 +76,15 @@ export default {
                 finish_date: this.items.finish_date,
                 description: this.items.description,
                 jenre: this.items.jenre
+                
             }).then((res) => {
                 this.items = res.data;
-                this.typedTitle = '',
-                this.typedAuthor = '',
-                this.typedPublisher = '',
-                this.typedText = '',
-                this.finish_date = '',
-                this.typedGenre = ''
+                // this.typedTitle = '',
+                // this.typedAuthor = '',
+                // this.typedPublisher = '',
+                // this.typedText = '',
+                // this.finish_date = '',
+                // this.typedGenre = ''
                 location.href = "/#/edit"
             })
         }
@@ -92,7 +95,7 @@ export default {
         },
         commentCount: function() {
             var filtered = this.items.filter(function(description) {
-                return (items.description !== null);
+                return (this.items.description !== null);
             });
             console.log(filtered);
         },
@@ -107,6 +110,10 @@ export default {
 .show_contents {
     margin: 0 auto;
     width: 600px;
+}
+
+.number_books, .number_comments {
+    margin-bottom: 10px;
 }
 
 .key_search {
