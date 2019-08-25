@@ -102,11 +102,12 @@ export default {
 </script>
 
 <style>
-/* .edit_contents {
-
+.edit_contents {
+    margin: 0 auto;
+    width: 600px;
 }
 
-.edit_item {
+/* .edit_item {
 
 } */
 </style>
