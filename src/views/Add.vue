@@ -1,7 +1,6 @@
 <template>
     <div class="add_contents">
         <div class="add_title">レビュー追加画面</div>
-        <!-- <form action="">formタグに描く場合はaction属性の中身（データの送信先）はどこに指定したらいいの？</form> -->
         <label class="add_item">
             <div>タイトル</div>
             <div><input name = "title"  type="text" class="txt" v-model="typedTitle" required></div>
@@ -54,7 +53,7 @@ export default {
         typedAuthor: '',
         typedPublisher: '',
         typedDate: '',
-        typedGenre: '',
+        typedGenre: '小説',
         roles: [
             "小説",
             "ビジネス本",
