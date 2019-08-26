@@ -1,7 +1,7 @@
 <template>
     <div class="edit_contents">
         <p>編集画面</p>
-        <div>
+        <div v-for="item in items" v-bind:key="item.id">
             <label class="edit_item">
                 <div>タイトル</div>
                 <div><input type="text" class="txt" v-model="typedTitle"></div>
@@ -17,7 +17,7 @@
             </label>
             <label class="edit_item">
                 <div>読了日</div>
-                <div><input type="date" selected='2019-08-01' v-model="finish_date"></div>
+                <div><input type="date" v-model="finish_date"></div>
             </label>
             <label for="select_genre" class="edit_item">
                 <div>ジャンル</div>
@@ -27,7 +27,6 @@
             </label>
             <label>
                 <div>感想</div>
-                <div v-if="error" class="error">{{ error }}</div>
                 <textarea v-model="typedText" name="" class="txa" cols="20" rows="10"></textarea>
                 <p>{{ charaCount }} 文字</p>
             </label>

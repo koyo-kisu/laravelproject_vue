@@ -16,7 +16,7 @@
                 <div class="show_items">出版社名：{{ item.publisher }}</div>
                 <div class="show_items">ジャンル：{{ item.genre }}</div>
                 <div class="show_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>
-                <div class="show_items edit_btn" v-on:click="onEdit(item.id)" v-bind:key="item.id">編集</div>  
+                <div class="show_items edit_btn" v-on:click="editText(item.id)" v-bind:key="item.id">編集</div>  
             </div>
         </div>
         <router-link to="/" class="return_home_btn">ホームに戻る</router-link>
@@ -69,7 +69,7 @@ export default {
             })
         },
         // 編集
-        onEdit: function(task_id) {
+        editText: function(task_id) {
             axios.post('/api/edit', {
                 id: task_id,
                 title: this.items.title,
@@ -167,15 +167,6 @@ export default {
     margin-bottom: 5px;
 }
 
-.update_btn {
-    background: skyblue;
-    width: 35px;
-    text-align: center;
-    cursor: pointer;
-    margin-bottom: 5px;
-    float: right;
-}
-
 .edit_btn {
     background: red;
     width: 35px;
@@ -183,6 +174,7 @@ export default {
     cursor: pointer;
     margin-bottom: 5px;
     margin-left: 10px;
+    float: left;
 }
 
 .return_home_btn, .return_add_btn {
