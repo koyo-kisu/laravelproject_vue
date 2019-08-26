@@ -5,11 +5,12 @@
             <label class="edit_item">
                 <div>タイトル</div>
                 <div><input type="text" class="txt" v-model="typedTitle"></div>
+                <div class="error" v-if="error.titleErr">{{ error.titleErr }}</div>
             </label>
             <label class="edit_item">
                 <div>著者名</div>
-                <div v-if="error" class="error">{{ error }}</div>
                 <div><input type="text" class="txt" v-model="typedAuthor"></div>
+                <div class="error" v-if="error.authorErr">{{ error.authorErr }}</div>
             </label>
             <label class="edit_item">
                 <div>出版社</div>
@@ -73,14 +74,18 @@ export default {
                 genre: this.typedGenre
 
             }).then((res) => {
-                this.items = res.data,
-                this.typedTitle = '',
-                this.typedAuthor = '',
-                this.typedPublisher = '',
-                this.typedText = '',
-                this.finish_date = '',
-                this.typedGenre = ''
-
+                if (res.data.error){
+                    this.errors = res.data.error
+                }
+                else {
+                    this.items = res.data,
+                    this.typedTitle = '',
+                    this.typedAuthor = '',
+                    this.typedPublisher = '',
+                    this.typedText = '',
+                    this.typedDate = '',
+                    this.typedGenre = ''
+                }
             })
         }, 
     },

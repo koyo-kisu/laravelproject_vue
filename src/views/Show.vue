@@ -70,7 +70,7 @@ export default {
         },
         // 編集
         editText: function(task_id) {
-            axios.post('/api/#/edit', {
+            axios.post('/api/edit', {
                 id: task_id,
                 title: this.items.title,
                 author: this.items.author,
@@ -80,14 +80,14 @@ export default {
                 genre: this.items.genre,
                 
             }).then((res) => {
-                this.items = res.data;
-                this.typedTitle = '',
-                this.typedAuthor = '',
-                this.typedPublisher = '',
-                this.typedText = '',
-                this.finish_date = '',
-                this.typedGenre = '',
-                location.href = "/#/edit"
+                // this.items = res.data;
+                // this.typedTitle = '',
+                // this.typedAuthor = '',
+                // this.typedPublisher = '',
+                // this.typedText = '',
+                // this.finish_date = '',
+                // this.typedGenre = '',
+                location.href = "/#/show"
             })
         }
     },
