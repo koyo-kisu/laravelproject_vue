@@ -50,7 +50,7 @@ export default {
         typedTitle: '',
         typedAuthor: '',
         typedPublisher: '',
-        typedDate: '2019-08-24',
+        typedDate: '',
         typedGenre: '小説',
         roles: [
             "小説",

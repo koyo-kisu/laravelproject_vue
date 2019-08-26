@@ -14,7 +14,7 @@
                 <div class="show_items">タイトル：{{ item.title }}</div>
                 <div class="show_items">著者名：{{ item.author }}</div>
                 <div class="show_items">出版社名：{{ item.publisher }}</div>
-                <div class="show_items">ジャンル：{{ item.jenre }}</div>
+                <div class="show_items">ジャンル：{{ item.genre }}</div>
                 <div class="show_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>
                 <div class="show_items edit_btn" v-on:click="onEdit(item.id)" v-bind:key="item.id">編集</div>  
             </div>
@@ -75,7 +75,7 @@ export default {
                 publisher: this.items.publisher,
                 finish_date: this.items.finish_date,
                 description: this.items.description,
-                jenre: this.items.jenre
+                genre: this.items.genre
                 
             }).then((res) => {
                 this.items = res.data;
@@ -129,6 +129,7 @@ export default {
 
 .search_item {
     width: 600px;
+    margin-bottom: 20px;
 }
 
 .show_title {

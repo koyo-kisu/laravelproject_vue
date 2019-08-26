@@ -82,14 +82,6 @@ export default {
                 this.finish_date = '',
                 this.typedGenre = ''
 
-            }).catch(function(error) {
-                this.errors = [];
-                if(!this.title) {
-                    this.errors.push("タイトルは必須です");
-                }
-                if(!this.author) {
-                    this.errors.push("著者名は必須です");
-                }
             })
         }, 
     },

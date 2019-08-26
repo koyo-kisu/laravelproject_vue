@@ -24,5 +24,14 @@ export default {
 <style>
 .login_contents {
     margin: 0 auto;
+    width: 600px;
+}
+
+.login_id {
+    width: 400px;
+}
+
+.login_pw {
+    width: 400px;
 }
 </style>
