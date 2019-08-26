@@ -70,7 +70,7 @@ export default {
         },
         // 編集
         editText: function(task_id) {
-            axios.post('/api/edit', {
+            axios.post('/api/#/edit', {
                 id: task_id,
                 title: this.items.title,
                 author: this.items.author,
@@ -174,7 +174,6 @@ export default {
     cursor: pointer;
     margin-bottom: 5px;
     margin-left: 10px;
-    float: left;
 }
 
 .return_home_btn, .return_add_btn {
