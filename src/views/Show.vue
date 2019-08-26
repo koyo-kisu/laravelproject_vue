@@ -41,6 +41,7 @@ export default {
                 this.items = res.data
             })
         },
+        // 削除
         delText: function(task_id) {
             axios.post('/api/del', {
                 id: task_id
@@ -49,10 +50,10 @@ export default {
                 location.href = "/" 
             })
         },
+        // 検索
         filteredItems: function() {
             axios.post('/api/search', {
                 title: this.keyword,
-                author: this.keyword
 
             }).then((res) => {
                 this.items = res.data
@@ -67,6 +68,7 @@ export default {
                 return texts;
             })
         },
+        // 編集
         onEdit: function(task_id) {
             axios.post('/api/edit', {
                 id: task_id,
@@ -75,21 +77,22 @@ export default {
                 publisher: this.items.publisher,
                 finish_date: this.items.finish_date,
                 description: this.items.description,
-                genre: this.items.genre
+                genre: this.items.genre,
                 
             }).then((res) => {
                 this.items = res.data;
-                // this.typedTitle = '',
-                // this.typedAuthor = '',
-                // this.typedPublisher = '',
-                // this.typedText = '',
-                // this.finish_date = '',
-                // this.typedGenre = ''
+                this.typedTitle = '',
+                this.typedAuthor = '',
+                this.typedPublisher = '',
+                this.typedText = '',
+                this.finish_date = '',
+                this.typedGenre = '',
                 location.href = "/#/edit"
             })
         }
     },
     computed: {
+        // 投稿数カウント
         itemCount: function() {
             return this.items.length;
         },
