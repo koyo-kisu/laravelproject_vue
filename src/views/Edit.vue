@@ -66,12 +66,13 @@ export default {
     },
     methods: {
         fetchTexts: function() {
-            axios.get('/api/books').then((res)=>{
+            axios.get('/api/show').then((res)=>{
                 this.items = res.data
             })
         },
-        addText() {
+        addText: function(task_id) {
             axios.post('/api/create', {
+                id: task_id,
                 title: this.typedTitle,
                 author: this.typedAuthor,
                 publisher: this.typedPublisher,
