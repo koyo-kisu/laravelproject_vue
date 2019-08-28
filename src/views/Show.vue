@@ -93,7 +93,7 @@ export default {
                     this.typedDate = '',
                     this.typedGenre = ''
                 }
-                location.href = "/edit"
+                location.href = "/#/edit"
             })
         }
     },
