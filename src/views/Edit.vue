@@ -66,7 +66,7 @@ export default {
     },
     methods: {
         fetchTexts: function() {
-            axios.get('/api/show').then((res)=>{
+            axios.get('/api/books').then((res)=>{
                 this.items = res.data
             })
         },
