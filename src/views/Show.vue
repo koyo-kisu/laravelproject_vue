@@ -36,6 +36,7 @@ export default {
         }
     },
     methods: {
+        //データを取得
         fetchTexts: function() {
             axios.get('/api/books').then((res)=>{
                 this.items = res.data
@@ -108,6 +109,7 @@ export default {
         //     console.log(filtered);
         // },
     },
+    //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
     created() {
         this.fetchTexts()
     },

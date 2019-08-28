@@ -55,6 +55,7 @@ export default {
             typedDate: '',
             typedGenre: '',
             errors: [],
+            items: [],
             roles: [
                 "小説",
                 "ビジネス本",
@@ -64,8 +65,13 @@ export default {
         }
     },
     methods: {
+        fetchTexts: function() {
+            axios.get('/api/books').then((res)=>{
+                this.items = res.data
+            })
+        },
         addText() {
-        axios.post('/api/create', {
+            axios.post('/api/create', {
                 title: this.typedTitle,
                 author: this.typedAuthor,
                 publisher: this.typedPublisher,
@@ -88,6 +94,10 @@ export default {
                 }
             })
         }, 
+    },
+    //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
+    created() {
+        this.fetchTexts()
     },
     computed: {
         charaCount: function() {

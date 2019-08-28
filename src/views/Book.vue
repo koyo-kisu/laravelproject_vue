@@ -31,6 +31,7 @@ import axios from 'axios'
 export default {
     data: function() {
         return {
+            //itemを格納するための配列
             items: [],
             heads: [
                 'タイトル',
@@ -41,16 +42,20 @@ export default {
     },
     methods: {
         fetchTexts: function() {
+            //axios.getでデータを取得
             axios.get('/api/books').then((res)=>{
+                //取得したデータをitemsに代入
                 this.items = res.data
                 console.log(res)
             })
         },
         
     },
+    //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
     created() {
         this.fetchTexts()
     },
+    //items数をカウント
     computed: {
         itemCount: function() {
             return this.items.length;
