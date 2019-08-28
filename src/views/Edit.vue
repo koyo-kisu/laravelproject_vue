@@ -66,7 +66,7 @@ export default {
     },
     methods: {
         fetchTexts: function() {
-            axios.get('/api/books').then((res)=>{
+            axios.get('/api/show').then((res)=>{
                 this.items = res.data
             })
         },
@@ -93,6 +93,7 @@ export default {
                     this.typedDate = '',
                     this.typedGenre = ''
                 }
+                location.href = "/" 
             })
         }, 
     },
