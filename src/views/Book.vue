@@ -31,7 +31,7 @@ import axios from 'axios'
 export default {
     data: function() {
         return {
-            //itemを格納するための配列
+            //データを格納するための配列
             items: [],
             heads: [
                 'タイトル',

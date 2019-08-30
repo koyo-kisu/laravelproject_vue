@@ -5,12 +5,12 @@
             <label class="edit_item">
                 <div>タイトル</div>
                 <div><input type="text" class="txt" v-model="typedTitle">{{ item.title }}</div>
-                <div class="error" v-if="error.titleErr">{{ error.titleErr }}</div>
+                <!-- <div class="error" v-if="error.titleErr">{{ error.titleErr }}</div> -->
             </label>
             <label class="edit_item">
                 <div>著者名</div>
                 <div><input type="text" class="txt" v-model="typedAuthor">{{ item.author }}</div>
-                <div class="error" v-if="error.authorErr">{{ error.authorErr }}</div>
+                <!-- <div class="error" v-if="error.authorErr">{{ error.authorErr }}</div> -->
             </label>
             <label class="edit_item">
                 <div>出版社</div>
