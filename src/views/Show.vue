@@ -55,6 +55,8 @@ export default {
         filteredItems: function() {
             axios.post('/api/search', {
                 title: this.keyword,
+                author: this.keyword,
+                publisher: this.keyword,
 
             }).then((res) => {
                 this.items = res.data
@@ -102,6 +104,7 @@ export default {
         itemCount: function() {
             return this.items.length;
         },
+        //感想ある投稿カウント
         // commentCount: function() {
         //     var filtered = this.items.filter(function(description) {
         //         return (this.items.description !== null);
