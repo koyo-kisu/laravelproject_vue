@@ -67,7 +67,31 @@ export default {
     methods: {
         //データを取得
         fetchTexts: function() {
-            axios.get('/api/edit').then((res)=>{
+            axios.get('/api/edit', {
+                id: task_id,
+                title: this.items.title,
+                author: this.items.author,
+                publisher: this.items.publisher,
+                finish_date: this.items.finish_date,
+                description: this.items.description,
+                genre: this.items.genre,
+                
+            }).then((res) => {
+                if (res.data.error){
+                    this.errors = res.data.error
+                }
+                else {
+                    this.items = res.data,
+                    this.typedTitle = '',
+                    this.typedAuthor = '',
+                    this.typedPublisher = '',
+                    this.typedText = '',
+                    this.typedDate = '',
+                    this.typedGenre = ''
+                }
+                location.href = "/#/edit"
+                               
+            }).then((res)=>{
                 this.items = res.data
             })
         },
