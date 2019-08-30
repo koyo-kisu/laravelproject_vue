@@ -65,11 +65,13 @@ export default {
         }
     },
     methods: {
+        //データを取得
         fetchTexts: function() {
-            axios.get('/api/show').then((res)=>{
+            axios.get('/api/books').then((res)=>{
                 this.items = res.data
             })
         },
+        //データを追加
         addText: function(task_id) {
             axios.post('/api/create', {
                 id: task_id,
@@ -101,6 +103,7 @@ export default {
     created() {
         this.fetchTexts()
     },
+    //文字数カウント
     computed: {
         charaCount: function() {
             return this.typedText.length;
