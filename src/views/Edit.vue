@@ -69,19 +69,19 @@ export default {
         fetchTexts: function() {
             axios.get('/api/edit', {
                 id: task_id,
-                title: this.items.title,
-                author: this.items.author,
-                publisher: this.items.publisher,
-                finish_date: this.items.finish_date,
-                description: this.items.description,
-                genre: this.items.genre,
+                title: this.item.title,
+                author: this.item.author,
+                publisher: this.item.publisher,
+                finish_date: this.item.finish_date,
+                description: this.item.description,
+                genre: this.item.genre,
                 
             }).then((res) => {
                 if (res.data.error){
                     this.errors = res.data.error
                 }
                 else {
-                    this.items = res.data,
+                    this.item = res.data,
                     this.typedTitle = '',
                     this.typedAuthor = '',
                     this.typedPublisher = '',
@@ -90,9 +90,9 @@ export default {
                     this.typedGenre = ''
                 }
                 location.href = "/#/edit"
-                               
+
             }).then((res)=>{
-                this.items = res.data
+                this.item = res.data
             })
         },
         //データを追加
