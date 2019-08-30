@@ -74,7 +74,7 @@ export default {
         },
         // 編集
         editText: function(task_id) {
-            axios.post('/api/edit', {
+            axios.get('/api/edit', {
                 id: task_id,
                 title: this.items.title,
                 author: this.items.author,
