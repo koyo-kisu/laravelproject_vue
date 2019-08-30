@@ -67,7 +67,7 @@ export default {
     methods: {
         //データを取得
         fetchTexts: function() {
-            axios.get('/api/show').then((res)=>{
+            axios.get('/api/edit').then((res)=>{
                 this.items = res.data
             })
         },

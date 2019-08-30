@@ -52,6 +52,7 @@ export default {
             })
         },
         // 検索
+        //第二引数に送信するデータを指定
         filteredItems: function() {
             axios.post('/api/search', {
                 title: this.keyword,
