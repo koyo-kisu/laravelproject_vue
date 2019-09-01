@@ -16,7 +16,7 @@
                 <div class="show_items">出版社名：{{ item.publisher }}</div>
                 <div class="show_items">ジャンル：{{ item.genre }}</div>
                 <div class="show_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>
-                <div class="show_items edit_btn" v-on:click="editText(item.id)" v-bind:key="item.id">編集</div>
+                <!-- <div class="show_items edit_btn" v-on:click="editText(item.id)" v-bind:key="item.id">編集</div> -->
                 <router-link to="/edit" class="show_items">編集する</router-link>  
             </div>
         </div>
@@ -74,32 +74,32 @@ export default {
             })
         },
         // 編集
-        editText: function(task_id) {
-            axios.post('/api/edit', {
-                id: task_id,
-                title: this.items.title,
-                author: this.items.author,
-                publisher: this.items.publisher,
-                finish_date: this.items.finish_date,
-                description: this.items.description,
-                genre: this.items.genre,
+        // editText: function(task_id) {
+        //     axios.post('/api/edit', {
+        //         id: task_id,
+        //         title: this.items.title,
+        //         author: this.items.author,
+        //         publisher: this.items.publisher,
+        //         finish_date: this.items.finish_date,
+        //         description: this.items.description,
+        //         genre: this.items.genre,
                 
-            }).then((res) => {
-                if (res.data.error){
-                    this.errors = res.data.error
-                }
-                else {
-                    this.items = res.data,
-                    this.typedTitle = '',
-                    this.typedAuthor = '',
-                    this.typedPublisher = '',
-                    this.typedText = '',
-                    this.typedDate = '',
-                    this.typedGenre = ''
-                }
-                location.href = "/#/edit"
-            })
-        }
+        //     }).then((res) => {
+        //         if (res.data.error){
+        //             this.errors = res.data.error
+        //         }
+        //         else {
+        //             this.items = res.data,
+        //             this.typedTitle = '',
+        //             this.typedAuthor = '',
+        //             this.typedPublisher = '',
+        //             this.typedText = '',
+        //             this.typedDate = '',
+        //             this.typedGenre = ''
+        //         }
+        //         location.href = "/#/edit"
+        //     })
+        // }
     },
     computed: {
         // 投稿数カウント

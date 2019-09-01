@@ -1,7 +1,6 @@
 <template>
     <div class="edit_contents">
         <p>編集画面</p>
-        <div>{{ item.title }}</div>
         <div v-for="item in items" v-bind:key="item.id">
             <label class="edit_item">
                 <div>タイトル</div>
@@ -91,11 +90,12 @@ export default {
                     // this.typedGenre = ''
                 }
                 location.href = "/#/edit"
-
-            }).then((res)=>{
-                this.items = res.data
-            })
-        },
+            }
+        )},
+            // }).then((res)=>{
+            //     this.items = res.data
+            // })
+        // },
         //データを追加
         addText: function(task_id) {
             axios.post('/api/create', {
