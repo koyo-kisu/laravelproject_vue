@@ -82,12 +82,12 @@ export default {
                 }
                 else {
                     this.items = res.data
-                    // this.typedTitle = '',
-                    // this.typedAuthor = '',
-                    // this.typedPublisher = '',
-                    // this.typedText = '',
-                    // this.typedDate = '',
-                    // this.typedGenre = ''
+                    this.typedTitle = this.items.title,
+                    this.typedAuthor = this.items.author,
+                    this.typedPublisher = this.items.publisher,
+                    this.typedText = this.items.finish_date,
+                    this.typedDate = this.items.description,
+                    this.typedGenre = this.items.genre
                 }
                 location.href = "/#/edit"
             }
