@@ -4,31 +4,31 @@
         <div v-for="item in items" v-bind:key="item.id">
             <label class="edit_item">
                 <div>タイトル</div>
-                <div><input type="text" class="txt" v-model="typedTitle">{{ item.title }}</div>
+                <div><input type="text" class="txt" v-model="typedTitle"></div>
                 <!-- <div class="error" v-if="error.titleErr">{{ error.titleErr }}</div> -->
             </label>
             <label class="edit_item">
                 <div>著者名</div>
-                <div><input type="text" class="txt" v-model="typedAuthor">{{ item.author }}</div>
+                <div><input type="text" class="txt" v-model="typedAuthor"></div>
                 <!-- <div class="error" v-if="error.authorErr">{{ error.authorErr }}</div> -->
             </label>
             <label class="edit_item">
                 <div>出版社</div>
-                <div><input type="text" class="txt" v-model="typedPublisher">{{ item.publisher }}</div>
+                <div><input type="text" class="txt" v-model="typedPublisher"></div>
             </label>
             <label class="edit_item">
                 <div>読了日</div>
-                <div><input type="date" v-model="finish_date">{{ item.finish_date }}</div>
+                <div><input type="date" v-model="finish_date"></div>
             </label>
             <label for="select_genre" class="edit_item">
                 <div>ジャンル</div>
                 <select name="genre" id="genre" v-model="typedGenre">
-                    <option v-for="role in roles" v-bind:key="role">{{ item.genre }}</option>
+                    <option v-for="role in roles" v-bind:key="role">{{ role }}</option>
                 </select>
             </label>
             <label>
                 <div>感想</div>
-                <textarea v-model="typedText" name="" class="txa" cols="20" rows="10" value="{{ item.description }}"></textarea>
+                <textarea v-model="typedText" name="" class="txa" cols="20" rows="10"></textarea>
                 <p>{{ charaCount }} 文字</p>
             </label>
             <br>
@@ -89,7 +89,7 @@ export default {
                     this.typedDate = this.items.description,
                     this.typedGenre = this.items.genre
                 }
-                location.href = "/#/edit"
+                // location.href = "/#/edit"
             }
         )},
             // }).then((res)=>{
