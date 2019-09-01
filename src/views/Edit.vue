@@ -66,33 +66,33 @@ export default {
     },
     methods: {
         //データを取得
-        fetchTexts: function() {
+        fetchTexts: function(task_id) {
             axios.get('/api/edit', {
                 id: task_id,
-                title: this.item.title,
-                author: this.item.author,
-                publisher: this.item.publisher,
-                finish_date: this.item.finish_date,
-                description: this.item.description,
-                genre: this.item.genre,
+                title: this.items.title,
+                author: this.items.author,
+                publisher: this.items.publisher,
+                finish_date: this.items.finish_date,
+                description: this.items.description,
+                genre: this.items.genre,
                 
             }).then((res) => {
                 if (res.data.error){
                     this.errors = res.data.error
                 }
                 else {
-                    this.item = res.data,
-                    this.typedTitle = '',
-                    this.typedAuthor = '',
-                    this.typedPublisher = '',
-                    this.typedText = '',
-                    this.typedDate = '',
-                    this.typedGenre = ''
+                    this.items = res.data
+                    // this.typedTitle = '',
+                    // this.typedAuthor = '',
+                    // this.typedPublisher = '',
+                    // this.typedText = '',
+                    // this.typedDate = '',
+                    // this.typedGenre = ''
                 }
                 location.href = "/#/edit"
 
             }).then((res)=>{
-                this.item = res.data
+                this.items = res.data
             })
         },
         //データを追加
