@@ -57,8 +57,8 @@ export default {
         filteredItems: function() {
             axios.post('/api/search', {
                 title: this.keyword,
-                author: this.keyword,
-                publisher: this.keyword,
+                // author: this.keyword,
+                // publisher: this.keyword,
 
             }).then((res) => {
                 this.items = res.data
