@@ -67,7 +67,7 @@ export default {
     methods: {
         //データを取得
         fetchTexts: function(task_id) {
-            axios.post('/api/books', {
+            axios.get('/api/books', {
                 id: task_id,
                 title: this.items.title,
                 author: this.items.author,
@@ -77,10 +77,10 @@ export default {
                 genre: this.items.genre,
                 
             }).then((res) => {
-                if (res.data.error){
-                    this.errors = res.data.error
-                }
-                else {
+                // if (res.data.error){
+                //     this.errors = res.data.error
+                // }
+                // else {
                     this.items = res.data
                     this.typedTitle = this.items.title,
                     this.typedAuthor = this.items.author,
@@ -88,8 +88,8 @@ export default {
                     this.typedText = this.items.finish_date,
                     this.typedDate = this.items.description,
                     this.typedGenre = this.items.genre
-                }
-                // location.href = "/#/edit"
+                // }
+                location.href = "/#/edit"
             }
         )},
 
