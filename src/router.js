@@ -34,6 +34,10 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/show/:showId',
+      name: 'showId',
     }
   ]
 })

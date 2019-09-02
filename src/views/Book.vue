@@ -11,7 +11,7 @@
             </thead>
             <tbody>
                 <tr v-for="item in items" v-bind:key="item.id">
-                    <td><router-link v-bind:to="{ params: {id: item.id} }">{{ item.title }}</router-link></td>
+                    <td><router-link :to="{ name: 'showId', params: {id: item.id} }">{{ item.title }}</router-link></td>
                     <!-- <router-link v-bind:to="{ name : 'Event', params : { id: event.id }}"></router-link> -->
                     <!-- <td>{{ item.title }}</td> -->
                     <td>{{ item.author }}</td>
