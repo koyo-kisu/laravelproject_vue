@@ -1,11 +1,11 @@
 <template>
     <div class="show_contents">
-        <div class="show_title">一覧画面</div>
-        <div class="number_books">読み終えた本：{{ itemCount }}冊</div>
-        <div class="search_item">
+        <div class="show_title">詳細画面</div>
+        <!-- <div class="number_books">読み終えた本：{{ itemCount }}冊</div> -->
+        <!-- <div class="search_item">
             <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
             <button v-on:click="filteredItems" class="key_search_btn">検索</button>
-        </div>
+        </div> -->
         <div>
             <div class="show_comment" v-for="item in items" v-bind:key="item.id">
                 <div class="show_date">読み終えた日：{{ item.finish_date }}</div>
@@ -31,7 +31,7 @@ export default {
         return {
             new_create: '',
             items: [],
-            keyword: this.items.title ,
+            // keyword: this.title ,
         }
     },
     methods: {
@@ -61,25 +61,25 @@ export default {
         },
         // 検索
         //第二引数に送信するデータを指定
-        filteredItems: function() {
-            axios.post('/api/search', {
-                title: this.keyword,
-                // author: this.keyword,
-                // publisher: this.keyword,
+        // filteredItems: function() {
+        //     axios.post('/api/search', {
+        //         title: this.keyword
+        //         // author: this.keyword,
+        //         // publisher: this.keyword,
 
-            }).then((res) => {
-                this.items = res.data
-                var texts = [];
+        //     }).then((res) => {
+        //         this.items = res.data
+        //         var texts = [];
 
-                for(var i in this.items) {
-                    var item = this.items[i];
-                    if(item.title.indexOf(this.keyword) !== -1) {
-                        texts.push(item);
-                    }
-                }
-                return texts;
-            })
-        },
+        //         for(var i in this.items) {
+        //             var item = this.items[i];
+        //             if(item.title.indexOf(this.keyword) !== -1) {
+        //                 texts.push(item);
+        //             }
+        //         }
+        //         return texts;
+        //     })
+        // },
     },
     computed: {
         // 投稿数カウント
