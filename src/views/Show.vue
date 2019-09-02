@@ -31,7 +31,7 @@ export default {
         return {
             new_create: '',
             items: [],
-            keyword: this.title ,
+            keyword: this.items.title ,
         }
     },
     methods: {
