@@ -37,8 +37,17 @@ export default {
     },
     methods: {
         //データを取得
-        fetchTexts: function() {
-            axios.get('/api/books').then((res)=>{
+        fetchTexts: function(task_id) {
+            axios.get('/api/books', {
+                id: task_id,
+                title: this.items.title,
+                author: this.items.author,
+                publisher: this.items.publisher,
+                finish_date: this.items.finish_date,
+                description: this.items.description,
+                genre: this.items.genre,
+                
+            }).then((res)=>{
                 this.items = res.data
             })
         },
