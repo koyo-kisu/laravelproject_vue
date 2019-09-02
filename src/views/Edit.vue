@@ -32,8 +32,8 @@
                 <p>{{ charaCount }} 文字</p>
             </label>
             <br>
-            <div class="add_btn">
-                <button type="submit" class="add_btn_txt" v-on:click="addText">登録する</button>
+            <div class="update_btn">
+                <button type="submit" class="update_btn_txt" v-on:click="updateText">更新する</button>
             </div>
             <div class="edit_home_btn">
                 <router-link to="/" class="edit_return_btn">ホームに戻る</router-link>
@@ -67,7 +67,7 @@ export default {
     methods: {
         //データを取得
         fetchTexts: function(task_id) {
-            axios.post('/api/edit', {
+            axios.post('/api/books', {
                 id: task_id,
                 // title: this.items.title,
                 // author: this.items.author,
@@ -92,13 +92,10 @@ export default {
                 // location.href = "/#/edit"
             }
         )},
-            // }).then((res)=>{
-            //     this.items = res.data
-            // })
-        // },
+
         //データを追加
-        addText: function(task_id) {
-            axios.post('/api/create', {
+        updateText: function(task_id) {
+            axios.post('/api/update', {
                 id: task_id,
                 title: this.typedTitle,
                 author: this.typedAuthor,

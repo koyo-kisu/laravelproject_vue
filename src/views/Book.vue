@@ -2,6 +2,7 @@
     <div class="book">
         <div class="book_title">読書管理アプリ</div>
         <div class="number_books">読み終えた本：{{ itemCount }}冊</div>
+        <div class="number_comments">感想がある本：{{ commentCount }}冊</div>
         <div class="book_contents">
             <thead>
                 <tr>
@@ -10,7 +11,8 @@
             </thead>
             <tbody>
                 <tr v-for="item in items" v-bind:key="item.id">
-                    <td>{{ item.title }}</td>
+                    <td><router-link to="/show/:id">{{ item.title }}</router-link></td>
+                    <!-- <td>{{ item.title }}</td> -->
                     <td>{{ item.author }}</td>
                     <td>{{ item.publisher }}</td>
                 </tr>
@@ -59,7 +61,18 @@ export default {
     computed: {
         itemCount: function() {
             return this.items.length;
-        }
+        },
+        //感想ある投稿カウント
+        commentCount: function() {
+            //itemsをfilterにかけてitemに代入している
+            var filtered = this.items.filter(function(item) {
+                //代入されたitemのなかのdescriptionの値がnullでない、つまり感想があるデータを返す
+                return (item.description !== null);
+            });
+            console.log(filtered);
+            //全体としてはfilteredに代入されたデータの数を表示させる
+            return filtered.length
+        },
     }
 }
 </script>
@@ -75,7 +88,7 @@ export default {
     padding-bottom: 30px;
 }
 
-.number_books {
+.number_books, .number_comments {
     margin-bottom: 20px;
 }
 
