@@ -69,12 +69,12 @@ export default {
         fetchTexts: function(task_id) {
             axios.post('/api/books', {
                 id: task_id,
-                // title: this.items.title,
-                // author: this.items.author,
-                // publisher: this.items.publisher,
-                // finish_date: this.items.finish_date,
-                // description: this.items.description,
-                // genre: this.items.genre,
+                title: this.items.title,
+                author: this.items.author,
+                publisher: this.items.publisher,
+                finish_date: this.items.finish_date,
+                description: this.items.description,
+                genre: this.items.genre,
                 
             }).then((res) => {
                 if (res.data.error){

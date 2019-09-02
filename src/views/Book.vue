@@ -11,7 +11,7 @@
             </thead>
             <tbody>
                 <tr v-for="item in items" v-bind:key="item.id">
-                    <td><router-link to="/show/:id">{{ item.title }}</router-link></td>
+                    <td><router-link to="/show/:task_id">{{ item.title }}</router-link></td>
                     <!-- <td>{{ item.title }}</td> -->
                     <td>{{ item.author }}</td>
                     <td>{{ item.publisher }}</td>
