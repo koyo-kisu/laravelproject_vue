@@ -3,6 +3,10 @@
         <div class="book_title">読書管理アプリ</div>
         <div class="number_books">読み終えた本：{{ itemCount }}冊</div>
         <div class="number_comments">感想がある本：{{ commentCount }}冊</div>
+        <div class="search_item">
+            <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
+            <button v-on:click="filteredItems" class="key_search_btn">検索</button>
+        </div>
         <div class="book_contents">
             <thead>
                 <tr>
@@ -12,7 +16,6 @@
             <tbody>
                 <tr v-for="item in items" v-bind:key="item.id">
                     <td><router-link :to="{ name: 'showId', params: {showId: item.id} }">{{ item.title }}</router-link></td>
-                    <!-- <router-link v-bind:to="{ name : 'Event', params : { id: event.id }}"></router-link> -->
                     <td>{{ item.author }}</td>
                     <td>{{ item.publisher }}</td>
                 </tr>
@@ -40,6 +43,11 @@ export default {
                 '著者名',
                 '出版社',
             ],
+            keyword: [
+                this.title,
+                this.author,
+                this.publisher
+            ],
         }
     },
     methods: {
@@ -49,6 +57,27 @@ export default {
                 //取得したデータをitemsに代入
                 this.items = res.data
                 console.log(res)
+            })
+        },
+        // 検索
+        // 第二引数に送信するデータを指定
+        filteredItems: function() {
+            axios.post('/api/search', {
+                title: this.keyword,
+                author: this.keyword,
+                publisher: this.keyword,
+
+            }).then((res) => {
+                this.items = res.data
+                var texts = [];
+
+                for(var i in this.items) {
+                    var item = this.items[i];
+                    if(item.title.indexOf(this.keyword) !== -1) {
+                        texts.push(item);
+                    }
+                }
+                return texts;
             })
         },
         
@@ -104,6 +133,22 @@ td {
     width: 400px;
     text-align: left;
     padding: 5px 0 5px 10px;
+}
+
+.key_search {
+    width: 550px;
+    height: 20px;
+}
+
+.key_search_btn {
+    display: inline-block;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.search_item {
+    width: 600px;
+    margin-bottom: 20px;
 }
 
 .add_page_btn, .show_page_btn {
