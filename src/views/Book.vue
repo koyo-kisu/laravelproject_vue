@@ -24,9 +24,9 @@
         <div class="add_page_btn">
             <router-link to="/Add" class="add_page_transition">追加フォームへ</router-link>
         </div>
-        <div class="show_page_btn">
+        <!-- <div class="show_page_btn">
             <router-link to="/show" class="show_page_transition">詳しく見る</router-link>
-        </div>
+        </div> -->
     </div>
 </template>
 
