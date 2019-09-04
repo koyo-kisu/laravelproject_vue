@@ -201,8 +201,7 @@ td {
 
 .card_body {
     border: 1px solid gray;
-    float: left;
-    margin-bottom: 10px; 
+    margin-bottom: 5px; 
 }
 
 </style>
