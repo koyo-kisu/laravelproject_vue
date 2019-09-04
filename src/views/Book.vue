@@ -117,6 +117,7 @@ export default {
 <style>
 a {
     color: black;
+    width: 100%;
 }
 
 .book {
@@ -199,8 +200,9 @@ td {
 }
 
 .card_body {
-    border: 1px solid black;
-    margin: left;
+    border: 1px solid gray;
+    float: left;
+    margin-bottom: 10px; 
 }
 
 </style>
