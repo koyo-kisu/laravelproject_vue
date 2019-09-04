@@ -139,7 +139,9 @@ a {
 
 .card_list {
     background: #dee2e6;
-    padding: 30px;
+    padding: 10px;
+    text-align: left;
+    width: 600px;
 }
 /* 
 th {
@@ -210,8 +212,7 @@ td {
 .card_body {
     border: 1px solid gray;
     margin-bottom: 5px; 
-    width: 75%;
-    margin: 0 auto;
+    width: 90%;
     background: white;
 }
 
