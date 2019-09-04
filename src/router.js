@@ -40,10 +40,10 @@ export default new Router({
       name: 'showId',
       components: Show, 
     },
-    {
-      path: '/edit/:editId',
-      name: 'editId',
-      component: Edit
-    }
+    // {
+    //   path: '/edit/:editId',
+    //   name: 'editId',
+    //   component: Edit
+    // }
   ]
 })
