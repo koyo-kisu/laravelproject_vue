@@ -21,12 +21,18 @@
                 </tr>
             </tbody>
         </div>
+        <div class="card_body">
+            <div class="card_title" v-for="item in items" v-bind:key="item.id">
+                <router-link :to="{name: 'showId', params: {showId: item.id} }">{{ item.title }}</router-link>
+                <span class="">{{ item.finish_date }}</span>
+            </div>
+        </div>
         <div class="add_page_btn">
             <router-link to="/Add" class="add_page_transition">追加フォーム</router-link>
         </div>
-        <!-- <div class="show_page_btn">
-            <router-link to="/show" class="show_page_transition">詳しく見る</router-link>
-        </div> -->
+        <div class="add_page_btn">
+            <router-link to="/">ホームへ戻る</router-link>
+        </div>
     </div>
 </template>
 
@@ -59,18 +65,20 @@ export default {
                 console.log(res)
             })
         },
-        // 検索
-        // 第二引数に送信するデータを指定
+        // 検索 第二引数に送信するデータを指定
         filteredItems: function() {
             axios.post('/api/search', {
                 title: this.keyword,
-                author: this.keyword,
-                publisher: this.keyword,
+                // author: this.keyword,
+                // publisher: this.keyword,
 
             }).then((res) => {
                 this.items = res.data
                 var texts = [];
 
+                //itemsの各データを変数iに順番に入れる
+                //itemsのi番目までを変数itemへ代入
+                //もしkeywordにtitleの値が-1でない、つまり値があればitemをtextsへ挿入する
                 for(var i in this.items) {
                     var item = this.items[i];
                     if(item.title.indexOf(this.keyword) !== -1) {
@@ -184,6 +192,10 @@ td {
 .book_contents {
     text-align: center;
     width: 100%;
+}
+
+.card_body {
+    border: 1px solid black;
 }
 
 </style>
