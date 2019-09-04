@@ -11,6 +11,7 @@
             <div class="card_body" v-for="item in items" v-bind:key="item.id">
                 <div class="card_title">
                     <router-link :to="{name: 'showId', params: {showId: item.id} }">{{ item.title }}</router-link>
+                    <div>{{ item.author }}</div>
                     <div class="">{{ item.finish_date }}</div>
                 </div>
             </div>
@@ -19,8 +20,8 @@
         <div class="add_page_btn">
             <router-link to="/Add" class="add_page_transition">追加フォーム</router-link>
         </div>
-        <div class="add_page_btn">
-            <router-link to="/">ホームへ戻る</router-link>
+        <div class="">
+            <router-link to="/">ホームに戻る</router-link>
         </div>
     </div>
 </template>
@@ -133,7 +134,7 @@ a {
 .card_body {
     border: 1px solid gray;
     margin-bottom: 5px; 
-    width: 90%;
+    width: 100%;
     height: 100px;
     background: white;
     padding: 5px;
