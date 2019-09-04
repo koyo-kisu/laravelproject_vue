@@ -43,7 +43,7 @@ export default {
             }).then((res)=>{
                 this.items = res.data
             })
-            location.href = "/#/edit" 
+            location.href = "/#/show" 
         },
         // 削除
         delText: function(task_id) {
