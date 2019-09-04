@@ -4,7 +4,7 @@
         <div class="number_books">読み終えた本：{{ itemCount }}冊</div>
         <div class="number_comments">感想がある本：{{ commentCount }}冊</div>
         <div class="search_item">
-            <input type="text" v-model="keyword" class="key_search">
+            <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
             <button v-on:click="filteredItems" class="key_search_btn">検索</button>
         </div>
         <div class="book_contents">
@@ -149,6 +149,7 @@ td {
 .search_item {
     width: 600px;
     margin-bottom: 20px;
+    margin: 0 auto;
 }
 
 .add_page_btn, .show_page_btn {
