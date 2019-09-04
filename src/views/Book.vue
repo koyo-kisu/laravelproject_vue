@@ -7,7 +7,7 @@
             <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
             <button v-on:click="filteredItems" class="key_search_btn">検索</button>
         </div>
-        <div class="book_contents">
+        <!-- <div class="book_contents">
             <thead>
                 <tr>
                     <th v-for="head in heads" v-bind:key="head">{{ head }}</th>
@@ -20,13 +20,16 @@
                     <td>{{ item.publisher }}</td>
                 </tr>
             </tbody>
-        </div>
-        <div class="card_body" v-for="item in items" v-bind:key="item.id">
-            <div class="card_title">
-                <router-link :to="{name: 'showId', params: {showId: item.id} }">{{ item.title }}</router-link>
-                <div class="">{{ item.finish_date }}</div>
+        </div> -->
+        <div class="card_list">
+            <div class="card_body" v-for="item in items" v-bind:key="item.id">
+                <div class="card_title">
+                    <router-link :to="{name: 'showId', params: {showId: item.id} }">{{ item.title }}</router-link>
+                    <div class="">{{ item.finish_date }}</div>
+                </div>
             </div>
         </div>
+
         <div class="add_page_btn">
             <router-link to="/Add" class="add_page_transition">追加フォーム</router-link>
         </div>
@@ -134,6 +137,10 @@ a {
     margin-bottom: 20px;
 }
 
+.card_list {
+    background: #dee2e6;
+}
+/* 
 th {
     border: 1px solid black;
     width: 400px;
@@ -146,7 +153,7 @@ td {
     width: 400px;
     text-align: left;
     padding: 5px 0 5px 10px;
-}
+} */
 
 .key_search {
     width: 550px;
@@ -194,14 +201,15 @@ td {
     text-align: center;
 }
 
-.book_contents {
+/* .book_contents {
     text-align: center;
     width: 100%;
-}
+} */
 
 .card_body {
     border: 1px solid gray;
     margin-bottom: 5px; 
+    width: 70%;
 }
 
 </style>
