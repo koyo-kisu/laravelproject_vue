@@ -21,10 +21,10 @@
                 </tr>
             </tbody>
         </div>
-        <div class="card_body">
-            <div class="card_title" v-for="item in items" v-bind:key="item.id">
+        <div class="card_body" v-for="item in items" v-bind:key="item.id">
+            <div class="card_title">
                 <router-link :to="{name: 'showId', params: {showId: item.id} }">{{ item.title }}</router-link>
-                <span class="">{{ item.finish_date }}</span>
+                <div class="">{{ item.finish_date }}</div>
             </div>
         </div>
         <div class="add_page_btn">
@@ -115,6 +115,10 @@ export default {
 </script>
 
 <style>
+a {
+    color: black;
+}
+
 .book {
     margin: 0 auto;
     width: 1000px;
@@ -196,6 +200,7 @@ td {
 
 .card_body {
     border: 1px solid black;
+    margin: left;
 }
 
 </style>
