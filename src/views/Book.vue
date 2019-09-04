@@ -7,20 +7,6 @@
             <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
             <button v-on:click="filteredItems" class="key_search_btn">検索</button>
         </div>
-        <!-- <div class="book_contents">
-            <thead>
-                <tr>
-                    <th v-for="head in heads" v-bind:key="head">{{ head }}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="item in items" v-bind:key="item.id">
-                    <td><router-link :to="{ name: 'showId', params: {showId: item.id} }">{{ item.title }}</router-link></td>
-                    <td>{{ item.author }}</td>
-                    <td>{{ item.publisher }}</td>
-                </tr>
-            </tbody>
-        </div> -->
         <div class="card_list">
             <div class="card_body" v-for="item in items" v-bind:key="item.id">
                 <div class="card_title">
@@ -141,22 +127,17 @@ a {
     background: #dee2e6;
     padding: 10px;
     text-align: left;
-    width: 600px;
-}
-/* 
-th {
-    border: 1px solid black;
-    width: 400px;
-    background: #f3f6fc;
-    font-size: bold;
+    width: 100%;
 }
 
-td {
-    border: 1px solid black;
-    width: 400px;
-    text-align: left;
-    padding: 5px 0 5px 10px;
-} */
+.card_body {
+    border: 1px solid gray;
+    margin-bottom: 5px; 
+    width: 90%;
+    height: 100px;
+    background: white;
+    padding: 5px;
+}
 
 .key_search {
     width: 550px;
@@ -202,18 +183,6 @@ td {
     text-decoration: none;
     width: 600px;
     text-align: center;
-}
-
-/* .book_contents {
-    text-align: center;
-    width: 100%;
-} */
-
-.card_body {
-    border: 1px solid gray;
-    margin-bottom: 5px; 
-    width: 90%;
-    background: white;
 }
 
 </style>
