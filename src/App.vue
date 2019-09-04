@@ -1,11 +1,6 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">メインページ</router-link> |
-      <router-link to="/add">追加画面</router-link> |
-      <!-- <router-link to="/show">感想画面</router-link> | -->
-      <!-- <router-link to="/edit">編集画面</router-link> | -->
-      <!-- <router-link to="/login">ログイン画面</router-link> -->
     </div>
     <router-view/>
   </div>
