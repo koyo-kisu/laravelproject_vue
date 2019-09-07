@@ -64,6 +64,10 @@ export default {
             ]
         }
     },
+    //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
+    created() {
+        this.fetchTexts()
+    },
     methods: {
         //データを取得
         fetchTexts: function(task_id) {
@@ -89,7 +93,6 @@ export default {
                     this.typedDate = this.items.description,
                     this.typedGenre = this.items.genre
                 // }
-                location.href = "/#/edit"
             }
         )},
 
@@ -120,10 +123,6 @@ export default {
                 location.href = "/" 
             })
         }, 
-    },
-    //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
-    created() {
-        this.fetchTexts()
     },
     //文字数カウント
     computed: {

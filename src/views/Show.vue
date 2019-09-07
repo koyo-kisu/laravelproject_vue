@@ -28,23 +28,27 @@ export default {
             items: [],
         }
     },
+    //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
+    created() {
+        this.fetchTexts()
+    },
     methods: {
         //データを取得
         fetchTexts: function(task_id) {
             axios.get('/api/books', {
                 id: task_id,
-                // title: this.items.title,
-                // author: this.items.author,
-                // publisher: this.items.publisher,
-                // finish_date: this.items.finish_date,
-                // description: this.items.description,
-                // genre: this.items.genre,
-
+                title: this.items.title,
+                author: this.items.author,
+                publisher: this.items.publisher,
+                finish_date: this.items.finish_date,
+                description: this.items.description,
+                genre: this.items.genre
             }).then((res)=>{
                 this.items = res.data
             })
-            location.href = "/#/show" 
+            // location.href = "/#/show" 
         },
+        
         // 削除
         delText: function(task_id) {
             axios.post('/api/del', {
@@ -61,10 +65,6 @@ export default {
         itemCount: function() {
             return this.items.length;
         },
-    },
-    //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
-    created() {
-        this.fetchTexts()
     },
 }
 </script>

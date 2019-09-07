@@ -46,6 +46,10 @@ export default {
             // ],
         }
     },
+    //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
+    created() {
+        this.fetchTexts()
+    },
     methods: {
         fetchTexts: function() {
             //axios.getでデータを取得
@@ -79,10 +83,6 @@ export default {
             })
         },
         
-    },
-    //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
-    created() {
-        this.fetchTexts()
     },
     //items数をカウント
     computed: {
@@ -134,7 +134,7 @@ a {
 .card_body {
     border: 1px solid gray;
     margin-bottom: 5px; 
-    width: 100%;
+    width: 95%;
     height: 100px;
     background: white;
     padding: 5px;
