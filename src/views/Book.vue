@@ -4,7 +4,7 @@
         <div class="number_books">読み終えた本：{{ itemCount }}冊</div>
         <div class="number_comments">感想がある本：{{ commentCount }}冊</div>
         <div class="search_item">
-            <input type="text" v-model="keyword" class="key_search" placeholder="タイトルを入力してください">
+            <input type="text" v-model="keyword" value="{{ $keyword }}" class="key_search" placeholder="何をお探しですか？">
             <button v-on:click="filteredItems" class="key_search_btn">検索</button>
         </div>
         <div class="card_list">
@@ -40,10 +40,6 @@ export default {
                 '出版社',
             ],
             keyword: []
-            //     this.title,
-            //     this.author,
-            //     this.publisher
-            // ],
         }
     },
     //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
@@ -63,8 +59,6 @@ export default {
         filteredItems: function() {
             axios.post('/api/search', {
                 title: this.keyword,
-                // author: this.keyword,
-                // publisher: this.keyword,
 
             }).then((res) => {
                 this.items = res.data
