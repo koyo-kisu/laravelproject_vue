@@ -8,7 +8,7 @@
             <button v-on:click="filteredItems" class="key_search_btn">検索</button>
         </div>
         <div class="card_list">
-            <div class="card_body" v-for="item in filteredItems" v-bind:key="item.id">
+            <div class="card_body" v-for="item in items" v-bind:key="item.id">
                 <div class="card_title">
                     <router-link :to="{name: 'showId', params: {showId: item.id} }">{{ item.title }}</router-link>
                     <div>{{ item.author }}</div>
@@ -39,7 +39,7 @@ export default {
                 '著者名',
                 '出版社',
             ],
-            keyword: '',
+            keyword: []
         }
     },
     //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
