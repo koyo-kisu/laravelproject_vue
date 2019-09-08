@@ -21,7 +21,7 @@
             <router-link to="/Add" class="add_page_transition">追加フォーム</router-link>
         </div>
         <div class="">
-            <router-link to="/">ホームに戻る</router-link>
+            <router-link to="/" class="add_page_transition">ホームに戻る</router-link>
         </div>
     </div>
 </template>
