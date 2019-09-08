@@ -37,7 +37,7 @@ export default new Router({
     },
     {
       path: '/show/:showId',
-      name: 'showId',
+      name: 'detail',
       components: Show, 
     },
     // {

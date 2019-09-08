@@ -10,7 +10,7 @@
         <div class="card_list">
             <div class="card_body" v-for="item in items" v-bind:key="item.id">
                 <div class="card_title">
-                    <router-link :to="{name: 'showId', params: {showId: item.id} }">{{ item.title }}</router-link>
+                    <router-link :to="{name: 'detail', params: {showId: item.id} }">{{ item.title }}</router-link>
                     <div>{{ item.author }}</div>
                     <div class="">{{ item.finish_date }}</div>
                 </div>
