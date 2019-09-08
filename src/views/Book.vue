@@ -20,7 +20,8 @@
         <div class="add_page_btn">
             <router-link to="/Add" class="add_page_transition">追加フォーム</router-link>
         </div>
-        <div class="">
+        <div class="add_page_btn">
+            <!-- 検索後は機能しないエラー -->
             <router-link to="/" class="add_page_transition">ホームに戻る</router-link>
         </div>
     </div>
