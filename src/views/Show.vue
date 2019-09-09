@@ -10,7 +10,7 @@
                 <div class="show_items">出版社名：{{ item.publisher }}</div>
                 <div class="show_items">ジャンル：{{ item.genre }}</div>
                 <div class="show_items del_btn" v-on:click="delText(item.id)" v-bind:key="item.id">削除</div>
-                <router-link class="show_items" :to="{ name: 'editId', params: {editId: item.id} }">編集する</router-link> 
+                <router-link class="show_items" :to="{ name: 'edit', params: {editId: item.id} }">編集する</router-link> 
             </div>
         </div>
         <router-link to="/" class="return_home_btn">ホームに戻る</router-link>

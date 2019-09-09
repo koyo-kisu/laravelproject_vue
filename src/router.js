@@ -20,16 +20,6 @@ export default new Router({
       name: 'add',
       component: Add 
     },
-    // {
-    //   path: '/show',
-    //   name: 'show',
-    //   component: Show
-    // },
-    // {
-    //   path: '/edit',
-    //   name: 'edit',
-    //   component: Edit
-    // },
     {
       path: '/login',
       name: 'login',
@@ -42,7 +32,7 @@ export default new Router({
     },
     {
       path: '/edit/:editId',
-      name: 'editId',
+      name: 'edit',
       component: Edit
     }
   ]
