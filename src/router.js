@@ -28,7 +28,7 @@ export default new Router({
     {
       path: '/show/:showId',
       name: 'detail',
-      components: Show, 
+      component: Show
     },
     {
       path: '/edit/:editId',
