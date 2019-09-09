@@ -73,7 +73,12 @@ export default {
         fetchTexts: function(task_id) {
             axios.get('/api/books', {
                 id: task_id,
-                
+                title: this.typedTitle,
+                author: this.typedAuthor,
+                publisher: this.typedPublisher,
+                description: this.typedText,
+                finish_date: this.finish_date,
+                genre: this.typedGenre
             }).then((res) => {
                 // if (res.data.error){
                 //     this.errors = res.data.error

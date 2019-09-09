@@ -38,7 +38,7 @@ export default {
                 id: task_id
             }).then((res)=>{
                 this.items = res.data
-                console.log(res);
+                console.log(res.data);
             })
         },
 
