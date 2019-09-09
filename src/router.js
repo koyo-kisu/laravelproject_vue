@@ -20,16 +20,16 @@ export default new Router({
       name: 'add',
       component: Add 
     },
-    {
-      path: '/show',
-      name: 'show',
-      component: Show
-    },
-    {
-      path: '/edit',
-      name: 'edit',
-      component: Edit
-    },
+    // {
+    //   path: '/show',
+    //   name: 'show',
+    //   component: Show
+    // },
+    // {
+    //   path: '/edit',
+    //   name: 'edit',
+    //   component: Edit
+    // },
     {
       path: '/login',
       name: 'login',
