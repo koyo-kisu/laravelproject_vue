@@ -25,6 +25,7 @@ export default {
     data: function() {
         return {
             items: [],
+            id: task_id,
         }
     },
     //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
