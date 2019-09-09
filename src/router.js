@@ -26,7 +26,7 @@ export default new Router({
       component: Login
     },
     {
-      path: '/show/:showId',
+      path: '/:showId',
       name: 'detail',
       component: Show
     },
