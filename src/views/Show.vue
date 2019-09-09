@@ -30,16 +30,14 @@ export default {
     //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
     created() {
         this.fetchTexts()
-        console.log(showId);
     },
     methods: {
         //データを取得
-        fetchTexts: function(showId) {
+        fetchTexts: function($id) {
             axios.get('/api/detail', {
-                id: showId
+                id: $id
             }).then((res)=>{
                 this.items = res.data
-                console.log(res.data);
             })
         },
 
