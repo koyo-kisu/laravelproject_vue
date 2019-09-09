@@ -26,7 +26,7 @@ export default new Router({
       component: Login
     },
     {
-      path: '/:showId',
+      path: '/books/:id',
       name: 'detail',
       component: Show
     },

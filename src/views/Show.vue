@@ -33,9 +33,8 @@ export default {
     },
     methods: {
         //データを取得
-        fetchTexts: function($id) {
-            axios.get('/api/detail', {
-                id: $id
+        fetchTexts: function() {
+            axios.get('/api/books/${this.id}', {
             }).then((res)=>{
                 this.items = res.data
             })
@@ -47,6 +46,7 @@ export default {
                 id: task_id
 
             }).then((res) => {
+                this.items = res.data
                 location.href = "/" 
             })
         }
