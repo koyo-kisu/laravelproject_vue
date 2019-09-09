@@ -34,9 +34,9 @@ export default {
     },
     methods: {
         //データを取得
-        fetchTexts: function(task_id) {
+        fetchTexts: function(showId) {
             axios.get('/api/detail', {
-                id: task_id
+                id: showId
             }).then((res)=>{
                 this.items = res.data
                 console.log(res.data);
