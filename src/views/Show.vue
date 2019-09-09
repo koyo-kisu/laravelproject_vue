@@ -29,7 +29,8 @@ export default {
     },
     //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
     created() {
-        this.fetchTexts()
+        this.fetchTexts(task_id),
+        id = task_id
     },
     methods: {
         //データを取得
