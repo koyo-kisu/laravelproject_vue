@@ -73,12 +73,6 @@ export default {
         fetchTexts: function(task_id) {
             axios.get('/api/books', {
                 id: task_id,
-                title: this.items.title,
-                author: this.items.author,
-                publisher: this.items.publisher,
-                finish_date: this.items.finish_date,
-                description: this.items.description,
-                genre: this.items.genre,
                 
             }).then((res) => {
                 // if (res.data.error){
@@ -86,12 +80,6 @@ export default {
                 // }
                 // else {
                     this.items = res.data
-                    this.typedTitle = this.items.title,
-                    this.typedAuthor = this.items.author,
-                    this.typedPublisher = this.items.publisher,
-                    this.typedText = this.items.finish_date,
-                    this.typedDate = this.items.description,
-                    this.typedGenre = this.items.genre
                 // }
             }
         )},
