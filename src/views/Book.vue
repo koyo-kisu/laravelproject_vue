@@ -4,7 +4,7 @@
         <div class="number_books">読み終えた本：{{ itemCount }}冊</div>
         <div class="number_comments">感想がある本：{{ commentCount }}冊</div>
         <div class="search_item">
-            <input type="text" v-model="keyword" value="{{ $keyword }}" class="key_search" placeholder="何をお探しですか？">
+            <input type="text" v-model="keyword" class="key_search" placeholder="何をお探しですか？">
             <button v-on:click="filteredItems" class="key_search_btn">検索</button>
         </div>
         <div class="card_list">

@@ -4,7 +4,7 @@
         <div v-for="item in items" v-bind:key="item.id">
             <label class="edit_item">
                 <div>タイトル</div>
-                <div><input type="text" class="txt" v-model="typedTitle" value="{{ item.title }}"></div>
+                <div><input type="text" class="txt" v-model="typedTitle"></div>
                 <!-- <div class="error" v-if="error.titleErr">{{ error.titleErr }}</div> -->
             </label>
             <label class="edit_item">
