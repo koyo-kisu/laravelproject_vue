@@ -29,7 +29,7 @@ export default {
     },
     //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
     created() {
-        this.fetchTexts($id)
+        this.fetchTexts(id)
     },
     methods: {
         //データを取得
