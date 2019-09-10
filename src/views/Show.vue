@@ -37,6 +37,7 @@ export default {
             axios.get('/api/books/${this.id}', {
                 id: task_id
             }).then((res)=>{
+                console.log(task_id)
                 this.items = res.data
             })
         },
