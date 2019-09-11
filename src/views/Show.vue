@@ -36,7 +36,7 @@ export default {
         fetchTexts: function(task_id) {
             axios.get('/api/books/'+ this.id, {
                 id: task_id
-                
+
             }).then((res)=>{
                 this.items = res.data
             })
