@@ -34,12 +34,11 @@ export default {
     methods: {
         //データを取得
         fetchTexts: function(task_id) {
-            axios.get('/api/books/'+ this.$route.params.id,{
+            axios.get('/api/books/', {
                 id: task_id
             })
                 .then((res)=>{
                 this.items = res.data
-                console.log(res)
             })
         },
 
