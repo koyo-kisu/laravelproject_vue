@@ -29,12 +29,12 @@ export default {
     },
     //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
     created() {
-        this.fetchTexts(this.id)
+        this.fetchTexts()
     },
     methods: {
         //データを取得
         fetchTexts: function(task_id) {
-            axios.get('/api/books/', {
+            axios.get('/api/books/'+ this.$route.params.id, {
                 id: task_id
             })
                 .then((res)=>{
