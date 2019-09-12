@@ -35,7 +35,7 @@ export default {
         //データを取得
         fetchTexts: function(task_id) {
             axios.get('/api/books/'+ this.$route.params.id, {
-                id: task_id
+                // id: task_id
             })
                 .then((res)=>{
                 this.items = res.data
