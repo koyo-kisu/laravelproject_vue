@@ -111,7 +111,7 @@ export default {
                 //     this.errors = res.data.error
                 // }
                 // else {
-                    this.items = res.data
+                    this.item = res.data
                 // }
                 location.href = "/" 
             })
