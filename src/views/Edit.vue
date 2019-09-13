@@ -98,13 +98,13 @@ export default {
 
         //データを追加
         updateText: function(task_id) {
-            axios.post('/api/books/update/'+ this.$route.params.id, {
+            axios.post('/api/books/edit/'+ this.item.id, {
                 title: this.typedTitle,
                 author: this.typedAuthor,
                 publisher: this.typedPublisher,
                 description: this.typedText,
-                finish_date: this.finish_date,
-                genre: this.typedGenre
+                finish_date: this.typedDate,
+                genre: this.typedGenre,
 
             }).then((res) => {
                 // if (res.data.error){
