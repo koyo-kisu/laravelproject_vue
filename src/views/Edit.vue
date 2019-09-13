@@ -60,6 +60,7 @@ export default {
             typedDate: '',
             typedGenre: '',
             errors: [],
+            updated: false,
             item: [],
             roles: [
                 '小説',
@@ -98,7 +99,7 @@ export default {
 
         //データを追加
         updateText: function(task_id) {
-            axios.get('/api/books/edit/'+ this.item.id, {
+            axios.get('/api/books/edit/update/'+ this.item.id, {
                 title: this.typedTitle,
                 author: this.typedAuthor,
                 publisher: this.typedPublisher,
@@ -112,6 +113,7 @@ export default {
                 // }
                 // else {
                     this.item = res.data
+                    this.updated = true
                 // }
                 location.href = "/" 
             })

@@ -1,5 +1,6 @@
 <template>
     <div class="book">
+        <div v-if="updated" class="alert_updated">更新しました</div>
         <div class="book_title">読書管理アプリ</div>
         <div class="number_books">読み終えた本：{{ itemCount }}冊</div>
         <div class="number_comments">感想がある本：{{ commentCount }}冊</div>
@@ -40,7 +41,8 @@ export default {
                 '著者名',
                 '出版社',
             ],
-            keyword: []
+            keyword: [],
+            updated: false,
         }
     },
     //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
