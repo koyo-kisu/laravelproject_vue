@@ -99,7 +99,7 @@ export default {
 
         //データを追加
         updateText: function(task_id) {
-            axios.get('/api/books/edit/update/'+ this.item.id, {
+            axios.post('/api/books/edit/update/'+ this.item.id, {
                 title: this.typedTitle,
                 author: this.typedAuthor,
                 publisher: this.typedPublisher,
