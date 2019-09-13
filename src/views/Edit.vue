@@ -4,7 +4,7 @@
         <div>
             <label class="edit_item">
                 <div>タイトル</div>
-                <div><input type="text" class="txt" v-model="typedTitle"></div>
+                <div><input type="text" class="txt" v-model="typedTitle" value="{{ item.title }}"></div>
                 <!-- <div class="error" v-if="error.titleErr">{{ error.titleErr }}</div> -->
             </label>
             <label class="edit_item">
@@ -71,20 +71,13 @@ export default {
     methods: {
         //データを取得
         fetchTexts: function(task_id) {
-            axios.get('/api/books', {
-                id: task_id,
-                // title: this.typedTitle,
-                // author: this.typedAuthor,
-                // publisher: this.typedPublisher,
-                // description: this.typedText,
-                // finish_date: this.finish_date,
-                // genre: this.typedGenre
-            }).then((res) => {
+            axios.get('/api/books/'+ this.$route.params.id).then((res) => {
                 // if (res.data.error){
                 //     this.errors = res.data.error
                 // }
                 // else {
                     this.item = res.data
+                    console.log(res.data)
                 // }
             }
         )},
