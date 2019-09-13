@@ -21,18 +21,18 @@ export default new Router({
       component: Add 
     },
     {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
-    {
       path: '/books/:id',
       name: 'detail',
       component: Show
     },
     {
-      path: '/books/error/:id',
+      path: '/books/edit/:id',
       name: 'edit',
+      component: Edit
+    },
+    {
+      path: '/books/edit/update/:id',
+      name: 'update',
       component: Edit
     }
   ]

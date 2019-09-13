@@ -78,7 +78,7 @@ export default {
     methods: {
         //データを取得
         fetchTexts: function(task_id) {
-            axios.get('/api/books/error/'+ this.$route.params.id)
+            axios.get('/api/books/edit/'+ this.$route.params.id)
                 .then((res) => {
                 // if (res.data.error){
                 //     this.errors = res.data.error
@@ -98,8 +98,7 @@ export default {
 
         //データを追加
         updateText: function(task_id) {
-            axios.post('/api/update', {
-                id: task_id,
+            axios.post('/api/books/update/'+ this.$route.params.id, {
                 title: this.typedTitle,
                 author: this.typedAuthor,
                 publisher: this.typedPublisher,
@@ -108,18 +107,12 @@ export default {
                 genre: this.typedGenre
 
             }).then((res) => {
-                if (res.data.error){
-                    this.errors = res.data.error
-                }
-                else {
-                    this.items = res.data,
-                    this.typedTitle = '',
-                    this.typedAuthor = '',
-                    this.typedPublisher = '',
-                    this.typedText = '',
-                    this.typedDate = '',
-                    this.typedGenre = ''
-                }
+                // if (res.data.error){
+                //     this.errors = res.data.error
+                // }
+                // else {
+                    this.items = res.data
+                // }
                 location.href = "/" 
             })
         }, 
