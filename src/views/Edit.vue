@@ -4,7 +4,7 @@
         <div>
             <label class="edit_item">
                 <div>タイトル</div>
-                <div><input type="text" class="txt" v-model="typedTitle" value="{{ item.title }}"></div>
+                <div><input type="text" class="txt" v-model="typedTitle"></div>
                 <!-- <div class="error" v-if="error.titleErr">{{ error.titleErr }}</div> -->
             </label>
             <label class="edit_item">
@@ -77,6 +77,12 @@ export default {
                 // }
                 // else {
                     this.item = res.data
+                    this.typedText = this.item.description
+                    this.typedTitle = this.item.title
+                    this.typedAuthor = this.item.author
+                    this.typedPublisher = this.item.publisher
+                    this.typedDate = this.item.finish_date
+                    this.typedGenre = this.item.genre
                     console.log(res.data)
                 // }
             }
