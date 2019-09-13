@@ -24,6 +24,11 @@
                 <div>ジャンル</div>
                 <select name="genre" id="genre" v-model="typedGenre" v-for="role in roles" v-bind:key="role">
                     <option>{{ item.genre }}</option>
+                    <option>{{ item.genre }}</option>
+                    <option>{{ item.genre }}</option>
+                    <option>{{ item.genre }}</option>
+                    <option>{{ item.genre }}</option>
+                    <option>{{ item.genre }}</option>
                 </select>
             </label>
             <label>
