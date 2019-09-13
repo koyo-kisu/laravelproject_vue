@@ -2,7 +2,7 @@
     <div class="show_contents">
         <div class="show_title">詳細画面</div>
         <div>
-            <div class="show_comment" v-for="item in items" v-bind:key="item.id">
+            <div class="show_comment">
                 <div class="show_date">読み終えた日：{{ item.finish_date }}</div>
                 <div class="show_comment_text">{{ item.description }}</div>
                 <div class="show_items">タイトル：{{ item.title }}</div>
@@ -24,7 +24,7 @@ import axios from 'axios'
 export default {
     data: function() {
         return {
-            items: [],
+            item: [],
         }
     },
     //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
@@ -35,7 +35,7 @@ export default {
         //データを取得
         fetchTexts: function(task_id) {
             axios.get('/api/books/'+ this.$route.params.id).then((res)=>{
-                this.items = res.data
+                this.item = res.data
                 console.log(res.data)
             })
         },

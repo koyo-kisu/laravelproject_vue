@@ -1,7 +1,7 @@
 <template>
     <div class="edit_contents">
         <p>編集画面</p>
-        <div v-for="item in items" v-bind:key="item.id">
+        <div>
             <label class="edit_item">
                 <div>タイトル</div>
                 <div><input type="text" class="txt" v-model="typedTitle"></div>
@@ -55,7 +55,7 @@ export default {
             typedDate: '',
             typedGenre: '',
             errors: [],
-            items: [],
+            item: [],
             roles: [
                 "小説",
                 "ビジネス本",
@@ -84,7 +84,7 @@ export default {
                 //     this.errors = res.data.error
                 // }
                 // else {
-                    this.items = res.data
+                    this.item = res.data
                 // }
             }
         )},
