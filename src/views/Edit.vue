@@ -23,7 +23,7 @@
             <label for="select_genre" class="edit_item">
                 <div>ジャンル</div>
                 <select name="genre" id="genre" v-model="typedGenre">
-                    <option>{{ this.item.genre }}</option>
+                    <option>{{ item.genre }}</option>
                 </select>
             </label>
             <label>
