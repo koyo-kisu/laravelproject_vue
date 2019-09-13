@@ -4,7 +4,7 @@ import Book from './views/Book.vue'
 import Add from './views/Add.vue'
 import Show from './views/Show.vue'
 import Edit from './views/Edit.vue'
-import Login from './views/Login.vue'
+// import Login from './views/Login.vue'
 
 Vue.use(Router)
 

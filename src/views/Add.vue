@@ -71,7 +71,7 @@ export default {
     },
     methods: {
         addText: function() {
-            axios.post('/api/create', {
+            axios.post('/api/add', {
                 title: this.typedTitle,
                 author: this.typedAuthor,
                 publisher: this.typedPublisher,
@@ -80,18 +80,18 @@ export default {
                 genre: this.typedGenre,
 
             }).then((res) => {
-                if (res.data.error){
-                    this.errors = res.data.error
-                }
-                else {
-                    this.items = res.data,
-                    this.typedTitle = '',
-                    this.typedAuthor = '',
-                    this.typedPublisher = '',
-                    this.typedText = '',
-                    this.typedDate = '',
-                    this.typedGenre = ''
-                }
+                // if (res.data.error){
+                //     this.errors = res.data.error
+                // }
+                // else {
+                    // this.items = res.data,
+                    // this.typedTitle = '',
+                    // this.typedAuthor = '',
+                    // this.typedPublisher = '',
+                    // this.typedText = '',
+                    // this.typedDate = '',
+                    // this.typedGenre = ''
+                // }
                 location.href = "/" 
             })
         }, 
