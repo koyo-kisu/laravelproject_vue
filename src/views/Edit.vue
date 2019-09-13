@@ -23,7 +23,7 @@
             <label for="select_genre" class="edit_item">
                 <div>ジャンル</div>
                 <select name="genre" id="genre" v-model="typedGenre">
-                    <option></option>
+                    <option>{{ role }}</option>
                 </select>
             </label>
             <label>
@@ -56,12 +56,7 @@ export default {
             typedGenre: '',
             errors: [],
             item: [],
-            roles: [
-                "小説",
-                "ビジネス本",
-                "哲学",
-                "漫画"
-            ]
+            role: []
         }
     },
     //インスタンス生成時にfetchText()を実行したいのでcreated()フックに登録
