@@ -18,12 +18,12 @@
             </label>
             <label class="edit_item">
                 <div>読了日</div>
-                <div><input type="date" v-model="finish_date"></div>
+                <div><input type="date" v-model="typedDate"></div>
             </label>
             <label for="select_genre" class="edit_item">
                 <div>ジャンル</div>
                 <select name="genre" id="genre" v-model="typedGenre">
-                    <option v-for="role in roles" v-bind:key="role">{{ role }}</option>
+                    <option></option>
                 </select>
             </label>
             <label>
