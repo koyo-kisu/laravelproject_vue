@@ -31,7 +31,7 @@ export default new Router({
       component: Show
     },
     {
-      path: '/books/edit/:id',
+      path: '/books/:id',
       name: 'edit',
       component: Edit
     }
