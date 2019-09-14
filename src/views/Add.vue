@@ -4,7 +4,7 @@
         <label class="add_item">
             <div>タイトル</div>
             <div><input name = "title" type="text" class="txt" v-model="typedTitle" required></div>
-            <div class="error" v-if="error.titleErr">{{ error.titleErr }}</div>
+            <div class="error" v-if="errored.titleErr">{{ errored.titleErr }}</div>
         </label>
          <label class="add_item">
             <div>著者名</div>
@@ -52,17 +52,18 @@ export default {
         typedPublisher: '',
         typedDate: '',
         typedGenre: '小説',
+        item: [],
         roles: [
             "小説",
             "ビジネス本",
             "哲学",
             "漫画"
         ],
-        error: {
+        errored: {
             titleErr:"タイトルを入力してしてください",
             authorErr: "著者名を入力してください"
         },
-        error: false
+        // errored: false
       }
     },
     computed: {
@@ -80,15 +81,24 @@ export default {
                 finish_date: this.typedDate,
                 genre: this.typedGenre,
 
-            }).then((res) => {
+            })
+            .then((res) => {
+                this.item = res.data
                 // if (res.data.error){
                 //     this.errors = res.data.error
                 //     console.log(res.data.error)
+                //     this.error: true
                 // }
                 // else {
                 //     this.items = res.data
                 // }
-                location.href = "/" 
+            })
+            .catch(error => {
+                console.log(error)
+                this.errored = true
+            })
+            .finally(() => {
+                location.href = "/"
             })
         }, 
     }, 
