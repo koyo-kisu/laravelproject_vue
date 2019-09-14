@@ -9,7 +9,7 @@
          <label class="add_item">
             <div>著者名</div>
             <div><input name="author" type="text" class="txt" v-model="typedAuthor" required></div>
-            <div class="error" v-if="error.authorErr">{{ error.authorErr }}</div>
+            <div class="error" v-if="errored.authorErr">{{ errored.authorErr }}</div>
         </label>
          <label class="add_item">
              <div>出版社</div>
