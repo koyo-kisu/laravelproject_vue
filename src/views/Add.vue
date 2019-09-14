@@ -80,18 +80,12 @@ export default {
                 genre: this.typedGenre,
 
             }).then((res) => {
-                // if (res.data.error){
-                //     this.errors = res.data.error
-                // }
-                // else {
-                    // this.items = res.data,
-                    // this.typedTitle = '',
-                    // this.typedAuthor = '',
-                    // this.typedPublisher = '',
-                    // this.typedText = '',
-                    // this.typedDate = '',
-                    // this.typedGenre = ''
-                // }
+                if (res.data.error){
+                    this.errors = res.data.error
+                }
+                else {
+                    this.items = res.data
+                }
                 location.href = "/" 
             })
         }, 
