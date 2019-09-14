@@ -83,6 +83,7 @@ export default {
             }).then((res) => {
                 if (res.data.error){
                     this.errors = res.data.error
+                    console.log(res.data.error)
                 }
                 else {
                     this.items = res.data
@@ -93,6 +94,8 @@ export default {
     }, 
 }
 </script>
+
+
 
 
 <style>
