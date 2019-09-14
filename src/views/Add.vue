@@ -3,7 +3,7 @@
         <div class="add_title">レビュー追加画面</div>
         <label class="add_item">
             <div>タイトル</div>
-            <div><input name = "title"  type="text" class="txt" v-model="typedTitle" required></div>
+            <div><input name = "title" type="text" class="txt" v-model="typedTitle" required></div>
             <div class="error" v-if="error.titleErr">{{ error.titleErr }}</div>
         </label>
          <label class="add_item">
@@ -62,6 +62,7 @@ export default {
             titleErr:"タイトルを入力してしてください",
             authorErr: "著者名を入力してください"
         },
+        error: false
       }
     },
     computed: {

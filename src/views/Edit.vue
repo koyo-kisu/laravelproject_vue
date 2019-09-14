@@ -63,6 +63,7 @@ export default {
                 titleErr:"タイトルを入力してしてください",
                 authorErr: "著者名を入力してください"
             },
+            error: false,
             updated: false,
             item: [],
             roles: [
