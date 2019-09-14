@@ -84,14 +84,15 @@ export default {
             })
             .then((res) => {
                 this.item = res.data
-                // if (res.data.error){
+                /* if (res.data.error){
                 //     this.errors = res.data.error
                 //     console.log(res.data.error)
                 //     this.error: true
                 // }
                 // else {
                 //     this.items = res.data
-                // }
+                 }
+                 */
             })
             .catch(error => {
                 console.log(error)

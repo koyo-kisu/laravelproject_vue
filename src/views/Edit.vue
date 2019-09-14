@@ -85,10 +85,10 @@ export default {
         fetchTexts: function(task_id) {
             axios.get('/api/books/edit/'+ this.$route.params.id)
                 .then((res) => {
-                // if (res.data.error){
+                /* if (res.data.error){
                 //     this.errors = res.data.error
                 // }
-                // else {
+                 else { */
                     this.item = res.data
                     this.typedText = this.item.description
                     this.typedTitle = this.item.title
@@ -96,7 +96,6 @@ export default {
                     this.typedPublisher = this.item.publisher
                     this.typedDate = this.item.finish_date
                     this.typedGenre = this.item.genre
-                    console.log(res.data)
                 // }
             }
         )},
@@ -112,13 +111,15 @@ export default {
                 genre: this.typedGenre,
 
             }).then((res) => {
-                // if (res.data.error){
+                /* 
+                if (res.data.error){
                 //     this.errors = res.data.error
                 // }
                 // else {
                 //     this.item = res.data
                 //     this.updated = true
-                // }
+                 }
+                */
                 location.href = "/" 
             })
         }, 
