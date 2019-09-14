@@ -10,7 +10,7 @@
                 <div class="show_items">出版社名：{{ item.publisher }}</div>
                 <div class="show_items">ジャンル：{{ item.genre }}</div>
                 <div class="show_items del_btn" v-on:click="delText(item.id)">削除</div>
-                <router-link class="show_items" :to="{ name: 'edit', params: {id: item.id} }">編集する</router-link> 
+                <router-link class="show_items edit_btn" :to="{ name: 'edit', params: {id: item.id} }">編集する</router-link> 
             </div>
         </div>
         <router-link to="/" class="return_home_btn">ホームに戻る</router-link>
@@ -94,6 +94,7 @@ export default {
 
 .show_date {
     text-align: right;
+    margin-left: 10px;
 }
 
 .show_comment {
@@ -128,7 +129,7 @@ export default {
     margin-left: 10px;
 }
 
-.return_home_btn, .return_add_btn {
+.return_home_btn {
     display: inline-block;
     border: 1px solid;
     color: black;

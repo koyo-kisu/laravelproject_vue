@@ -38,7 +38,7 @@
             </label>
             <br>
             <div class="update_btn">
-                <button type="submit" class="update_btn_txt" v-on:click="updateText">更新する</button>
+                <div type="submit" class="update_btn_txt" v-on:click="updateText">更新する</div>
             </div>
             <div class="edit_home_btn">
                 <router-link to="/" class="edit_return_btn">ホームに戻る</router-link>
@@ -134,7 +134,21 @@ export default {
     width: 600px;
 }
 
-/* .edit_item {
+.update_btn_txt {
+    border: 1px solid gray;
+    padding: 10px ;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 600px;
+}
 
-} */
+.edit_return_btn{
+    border: 1px solid gray;
+    padding: 10px ;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 600px;
+}
 </style>

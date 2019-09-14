@@ -1,6 +1,6 @@
 <template>
     <div class="book">
-        <div v-if="updated" class="alert_updated">更新しました</div>
+        <div v-if="updated" class="alert alert-success">更新しました</div>
         <div class="book_title">読書管理アプリ</div>
         <div class="number_books">読み終えた本：{{ itemCount }}冊</div>
         <div class="number_comments">感想がある本：{{ commentCount }}冊</div>
@@ -129,7 +129,7 @@ a {
 
 .card_body {
     border: 1px solid gray;
-    margin-bottom: 5px; 
+    margin: 0 auto; 
     width: 95%;
     height: 100px;
     background: white;
