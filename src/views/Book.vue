@@ -163,10 +163,10 @@ a {
 .page_transition {
     display: inline-block;
     border: 1px solid gray;
-    padding: 5px 15px;
+    padding: 5px 0 5px 0;
     color: black;
     text-decoration: none;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
     width: 600px;
     text-align: center;

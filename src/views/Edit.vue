@@ -38,7 +38,7 @@
             </label>
             <br>
             <div class="page_btn">
-                <div type="submit" class="update_btn_txt" v-on:click="updateText">更新する</div>
+                <div type="submit" class="page_transition" v-on:click="updateText">更新する</div>
             </div>
             <div class="page_btn">
                 <router-link to="/" class="page_transition">ホームに戻る</router-link>

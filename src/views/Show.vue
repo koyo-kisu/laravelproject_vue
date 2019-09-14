@@ -99,7 +99,7 @@ export default {
 
 .show_comment {
     border: 1px solid black;
-    margin-bottom: 20px;
+    padding-bottom: 15px;
 }
 
 .show_comment_text {
