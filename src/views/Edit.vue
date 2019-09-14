@@ -5,12 +5,12 @@
             <label class="edit_item">
                 <div>タイトル</div>
                 <div><input type="text" class="txt" v-model="typedTitle"></div>
-                <div class="error" v-if="error.titleErr">{{ error.titleErr }}</div>
+                <div class="error" v-if="errored.titleErr">{{ errored.titleErr }}</div>
             </label>
             <label class="edit_item">
                 <div>著者名</div>
                 <div><input type="text" class="txt" v-model="typedAuthor"></div>
-                <div class="error" v-if="error.authorErr">{{ error.authorErr }}</div>
+                <div class="error" v-if="errored.authorErr">{{ errored.authorErr }}</div>
             </label>
             <label class="edit_item">
                 <div>出版社</div>
@@ -59,11 +59,11 @@ export default {
             typedPublisher: '',
             typedDate: '',
             typedGenre: '',
-            error: {
+            errored: {
                 titleErr:"タイトルを入力してしてください",
                 authorErr: "著者名を入力してください"
             },
-            error: false,
+            // error: false,
             updated: false,
             item: [],
             roles: [
