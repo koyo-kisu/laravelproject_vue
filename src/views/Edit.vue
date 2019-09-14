@@ -37,11 +37,11 @@
                 <p>{{ charaCount }} 文字</p>
             </label>
             <br>
-            <div class="update_btn">
+            <div class="page_btn">
                 <div type="submit" class="update_btn_txt" v-on:click="updateText">更新する</div>
             </div>
-            <div class="edit_home_btn">
-                <router-link to="/" class="edit_return_btn">ホームに戻る</router-link>
+            <div class="page_btn">
+                <router-link to="/" class="page_transition">ホームに戻る</router-link>
             </div>
         </div>
     </div>

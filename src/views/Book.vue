@@ -18,12 +18,12 @@
             </div>
         </div>
 
-        <div class="add_page_btn">
-            <router-link to="/Add" class="add_page_transition">追加フォーム</router-link>
+        <div class="page_btn">
+            <router-link to="/Add" class="page_transition">追加フォーム</router-link>
         </div>
-        <div class="add_page_btn">
+        <div class="page_btn">
             <!-- 検索後は機能しないエラー -->
-            <router-link to="/" class="add_page_transition">ホームに戻る</router-link>
+            <router-link to="/" class="page_transition">ホームに戻る</router-link>
         </div>
     </div>
 </template>
@@ -153,14 +153,14 @@ a {
     margin: 0 auto;
 }
 
-.add_page_btn, .show_page_btn {
+.page_btn {
     margin-top: 30px;
     width: 600px;
     text-align: center;
     margin: 0 auto;
 }
 
-.add_page_transition {
+.page_transition {
     display: inline-block;
     border: 1px solid gray;
     padding: 5px 15px;
@@ -168,16 +168,6 @@ a {
     text-decoration: none;
     margin-top: 20px;
     margin-bottom: 10px;
-    width: 600px;
-    text-align: center;
-}
-
-.show_page_transition {
-    display: inline-block;
-    border: 1px solid gray;
-    padding: 5px 15px;
-    color: black;
-    text-decoration: none;
     width: 600px;
     text-align: center;
 }

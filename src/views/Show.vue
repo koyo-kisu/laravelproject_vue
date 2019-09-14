@@ -13,7 +13,7 @@
                 <router-link class="show_items edit_btn" :to="{ name: 'edit', params: {id: item.id} }">編集する</router-link> 
             </div>
         </div>
-        <router-link to="/" class="return_home_btn">ホームに戻る</router-link>
+        <router-link to="/" class="page_transition">ホームに戻る</router-link>
     </div>
 </template>
 

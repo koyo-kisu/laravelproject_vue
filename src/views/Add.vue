@@ -31,11 +31,11 @@
             <p>{{ charaCount }} 文字</p>
         </label>
         <br>
-        <div class="add_btn">
-            <button type="submit" class="add_btn_txt" v-on:click="addText">登録する</button>
+        <div class="page_btn">
+            <button type="submit" class="page_transition" v-on:click="addText">登録する</button>
         </div>
-        <div class="add_home_btn">
-            <router-link to="/" class="add_return_btn">ホームに戻る</router-link>
+        <div class="page_btn">
+            <router-link to="/" class="page_transition">ホームに戻る</router-link>
         </div>
     </div>
 </template>
