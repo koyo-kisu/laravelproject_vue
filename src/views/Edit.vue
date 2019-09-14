@@ -112,13 +112,13 @@ export default {
                 genre: this.typedGenre,
 
             }).then((res) => {
-                if (res.data.error){
-                    this.errors = res.data.error
-                }
-                else {
-                    this.item = res.data
-                    this.updated = true
-                }
+                // if (res.data.error){
+                //     this.errors = res.data.error
+                // }
+                // else {
+                //     this.item = res.data
+                //     this.updated = true
+                // }
                 location.href = "/" 
             })
         }, 
