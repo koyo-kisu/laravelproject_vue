@@ -94,7 +94,7 @@ export default {
 
 .show_date {
     text-align: right;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .show_comment {
@@ -128,17 +128,5 @@ export default {
     margin-bottom: 15px;
     margin-left: 10px;
     text-decoration: none;
-}
-
-.return_home_btn {
-    display: inline-block;
-    border: 1px solid;
-    color: black;
-    text-decoration: none;
-    width: 590px;
-    text-align: center;
-    padding: 5px 0 5px 0 ;
-    margin-bottom: 20px;
-    font-size: 11px;
 }
 </style>

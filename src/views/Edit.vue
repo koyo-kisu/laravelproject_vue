@@ -1,6 +1,6 @@
 <template>
     <div class="edit_contents">
-        <p>編集画面</p>
+        <p class="edit_title">編集画面</p>
         <div>
             <label class="edit_item">
                 <div>タイトル</div>
@@ -129,29 +129,12 @@ export default {
 </script>
 
 <style>
+.edit_title {
+    text-align: center;
+}
+
 .edit_contents {
     margin: 0 auto;
     width: 600px;
-}
-
-.update_btn_txt {
-    border: 1px solid gray;
-    padding: 5px 0 5px 0 ;
-    cursor: pointer;
-    text-align: center;
-    width: 600px;
-}
-
-.edit_home_btn {
-    margin-top: 10px;
-}
-
-.edit_return_btn{
-    border: 1px solid gray;
-    padding: 5px 0 5px 0 ;
-    cursor: pointer;
-    text-align: center;
-    width: 600px;
-    text-decoration: none;
 }
 </style>

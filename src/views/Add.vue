@@ -121,29 +121,5 @@ export default {
     text-decoration: none;
 }
 
-.add_btn {
-    padding-top: 20px;
-}
-
-.add_btn_txt  {
-    border: 1px solid gray;
-    padding: 10px ;
-    cursor: pointer;
-    text-align: center;
-    margin-bottom: 10px;
-    width: 600px;
-}
-
-.add_return_btn {
-    display: inline-block;
-    border: 1px solid gray;
-    width: 600px;
-    padding: 5px 0px 5px 0px;
-    cursor: pointer;
-    color: black;
-    text-decoration: none;
-    text-align: center;
-}
-
 </style>
 

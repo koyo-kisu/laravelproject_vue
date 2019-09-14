@@ -170,6 +170,7 @@ a {
     margin-bottom: 10px;
     width: 600px;
     text-align: center;
+    cursor: pointer;
 }
 
 </style>
