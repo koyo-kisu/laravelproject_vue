@@ -136,19 +136,22 @@ export default {
 
 .update_btn_txt {
     border: 1px solid gray;
-    padding: 10px ;
+    padding: 5px 0 5px 0 ;
     cursor: pointer;
     text-align: center;
-    margin-bottom: 10px;
     width: 600px;
+}
+
+.edit_home_btn {
+    margin-top: 10px;
 }
 
 .edit_return_btn{
     border: 1px solid gray;
-    padding: 10px ;
+    padding: 5px 0 5px 0 ;
     cursor: pointer;
     text-align: center;
-    margin-bottom: 10px;
     width: 600px;
+    text-decoration: none;
 }
 </style>

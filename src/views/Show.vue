@@ -99,7 +99,7 @@ export default {
 
 .show_comment {
     border: 1px solid black;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .show_comment_text {
@@ -121,12 +121,13 @@ export default {
 }
 
 .edit_btn {
-    background: red;
+    background:#819FF7;
     width: 35px;
     text-align: center;
     cursor: pointer;
     margin-bottom: 5px;
     margin-left: 10px;
+    text-decoration: none;
 }
 
 .return_home_btn {
