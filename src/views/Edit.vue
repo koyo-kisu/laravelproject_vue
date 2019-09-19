@@ -5,12 +5,12 @@
             <label class="edit_item">
                 <div>タイトル</div>
                 <div><input type="text" class="txt" v-model="typedTitle"></div>
-                <div class="error" v-if="errored.titleErr">{{ errored.titleErr }}</div>
+                <!-- <div class="error" v-if="errored.titleErr">{{ errored.titleErr }}</div> -->
             </label>
             <label class="edit_item">
                 <div>著者名</div>
                 <div><input type="text" class="txt" v-model="typedAuthor"></div>
-                <div class="error" v-if="errored.authorErr">{{ errored.authorErr }}</div>
+                <!-- <div class="error" v-if="errored.authorErr">{{ errored.authorErr }}</div> -->
             </label>
             <label class="edit_item">
                 <div>出版社</div>
@@ -20,7 +20,7 @@
                 <div>読了日</div>
                 <div><input type="date" v-model="typedDate"></div>
             </label>
-            <label for="select_genre" class="edit_item">
+            <!-- <label for="select_genre" class="edit_item">
                 <div>ジャンル</div>
                 <select name="genre" id="genre" v-model="typedGenre" v-for="role in roles" v-bind:key="role">
                     <option>{{ item.genre }}</option>
@@ -30,7 +30,7 @@
                     <option>{{ item.genre }}</option>
                     <option>{{ item.genre }}</option>
                 </select>
-            </label>
+            </label> -->
             <label>
                 <div>感想</div>
                 <textarea v-model="typedText" name="" class="txa" cols="20" rows="10"></textarea>
